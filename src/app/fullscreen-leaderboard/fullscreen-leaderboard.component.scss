@@ -101,14 +101,14 @@ height: 9vh;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 height: 33vh;
-    margin-top: 2vh;
+    margin-top: 1vh;
   }
 
   .lower_rank{
     font-family: 'Poppins';
 font-style: normal;
 font-weight: 400;
-font-size: 1.5vw;
+font-size: 1.2vw;
 
 /* identical to box height */
 
@@ -149,4 +149,80 @@ color: #FFFFFF;
     /* identical to box height */
         
     color: #FFFFFF;
+  }
+
+.upper_animated_card_move{
+    background: linear-gradient(92.07deg, rgba(26, 13, 56, 0.95) 10.8%, rgba(46, 28, 88, 0.96) 44.37%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    /* margin-top: 1vh; */
+    height: 14vh;
+}
+
+.upper_animated_hex1::before {
+    content: "\2B22";
+    color: #5BB260;
+
+    position: absolute;
+    top: 0;
+    font-size: 9vh;
+  }
+
+  .upper_animated_name{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5vw;
+    color: #FFFFFF;
+    margin-bottom: 0;
+  }
+
+  .upper_name_div{
+    display: flex;
+    align-items: center;
+    height: 11vh;
+  }
+
+  .upper_animated_team{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    margin-bottom: 0;
+    color: #FFFFFF;
+  }
+ 
+
+  .upper_animated_score{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    margin-bottom: 0;
+    color: #FFFFFF;
+   
+  }
+
+  .animated_transparent_card{
+    padding: 0;
+    height: 40vh;
+    position: absolute;
+    width: 100vw;
+    overflow: hidden;
+    animation: mymove 8s infinite;
+  }
+  
+  @keyframes mymove {
+    
+    0%   {top: 10vh}
+    25%  {top: 20vh;}
+    50%  {top: 30vh}
+    75%  {top: 40vh}
+    100%  {top: 54vh}
+ 
+    // 0%{top:10vh}
+
   }

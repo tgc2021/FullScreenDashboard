@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullscreenLeaderboardComponent } from './fullscreen-leaderboard/fullscreen-leaderboard.component';
 import {MatCardModule} from '@angular/material/card';
+import { FullscreenDashboardComponent } from './fullscreen-dashboard/fullscreen-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FullscreenLeaderboardComponent
+    FullscreenLeaderboardComponent,
+    FullscreenDashboardComponent
   ],
   imports: [
     BrowserModule,
