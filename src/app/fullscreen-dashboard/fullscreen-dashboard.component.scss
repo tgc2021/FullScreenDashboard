@@ -1,5 +1,5 @@
 .web-view{
-    background-image: url(../../assets/fullscreen_cricket/Stadim.svg);
+    background-image: url(../../assets/fullscreen_cricket/Cricket_FS_Dashboard.svg);
     width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
@@ -21,6 +21,18 @@
 }
 
 
+.fade {
+    transform: scale(0);
+    opacity: 0;
+    -webkit-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+  }
+  
+  .fade.in {
+    opacity: 1;
+    transform: scale(1);
+  }
 
 // .left-side-leaderboard{
 //     background: url('../../assets/fullscreen_cricket/left_side_leader_board.png');
@@ -40,6 +52,8 @@
     height: 4vh;
     margin-top: 9vh;
     margin-left: 3vh;
+    border: 1px solid #000000;
+    position: relative;
 
 }
 
@@ -51,13 +65,411 @@
     margin-top: 1vh;
     width: 90%;
     height: 4vh;
-
+    border: 1px solid #000000;
+    position: relative;
 }
 
 .tile_6{
-    position: absolute;
-    z-index: 2;
-    margin-top: 44vh;
-    left: 12vw;
+       /* position: absolute; */
+    /* z-index: 2; */
+    // margin-top: 5vh;
+    /* left: 12vw; */
     width: 9vw;
+    float: right;
+}
+
+.tile_6_name{
+      /* bottom: 1.2vh; */
+      width: 100%;
+      position: absolute;
+      word-spacing: 100vw;
+      font-size: 0.8vw;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      color: #FFFFFF;
+      text-align: center;
+      top: 0;
+      left: 0;
+      transform: translate(-12%, 18%);
+  
+
+}
+
+.tile_8_name{
+    /* bottom: 1.2vh; */
+    width: 100%;
+    position: absolute;
+    word-spacing: 100vw;
+    font-size: 0.8vw;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+    top: 0;
+    left: 0;
+    transform: translate(-12%, 18%);
+
+
+}
+
+.tile_9_name{
+    width: 100%;
+    position: absolute;
+    word-spacing: 100vw;
+    font-size: 0.8vw;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+    top: 0;
+    left: 0;
+    transform: translate(-12%, 18%);
+}
+
+.tile_7_name{
+    width: 100%;
+    position: absolute;
+    word-spacing: 100vw;
+    font-size: 0.8vw;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+    top: 0;
+    left: 0;
+    transform: translate(7%, 17%);
+}
+
+.tile_10_name{
+    width: 100%;
+    position: absolute;
+    word-spacing: 100vw;
+    font-size: 0.8vw;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+    top: 0;
+    left: 0;
+    transform: translate(27%, 17%);
+}
+
+.tile_7_score{
+    width: 100%;
+    position: absolute;
+    word-spacing: 100vw;
+    font-size: 0.8vw;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+    top: 0;
+    left: 0;
+    transform: translate(35%, 75%);
+}
+
+.tile_10_score{
+    width: 100%;
+    position: absolute;
+    word-spacing: 100vw;
+    font-size: 0.8vw;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+    top: 0;
+    left: 0;
+    transform: translate(62%, 80%);
+}
+
+
+.lower_rank_row{
+    margin-top: 5vh;
+}
+
+.tile_6_score{
+         width: 100%;
+      position: absolute;
+      word-spacing: 100vw;
+      font-size: 0.8vw;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      color: #FFFFFF;
+      text-align: center;
+      top: 0;
+      left: 0;
+      transform: translate(30%, 75%);
+    
+}
+
+.tile_6_div{
+    position:relative;
+}
+
+.tile_8_score{
+    width: 100%;
+ position: absolute;
+ word-spacing: 100vw;
+ font-size: 0.8vw;
+ font-family: "Poppins";
+ font-style: normal;
+ font-weight: 500;
+ color: #FFFFFF;
+ text-align: center;
+ top: 0;
+ left: 0;
+ transform: translate(30%, 75%);
+
+}
+.tile_8_div{
+    position:relative;
+}
+
+.tile_9_div{
+    position:relative;
+}
+
+.tile_9_score{
+    width: 100%;
+ position: absolute;
+ word-spacing: 100vw;
+ font-size: 0.8vw;
+ font-family: "Poppins";
+ font-style: normal;
+ font-weight: 500;
+ color: #FFFFFF;
+ text-align: center;
+ top: 0;
+ left: 0;
+ transform: translate(30%, 75%);
+
+}
+
+.lower_rank_row_8{
+    margin-top: 13vh;
+
+}
+.tile_8{
+    width: 9vw;
+    float: right;
+}
+
+.tile_9{
+    width: 9vw;
+    float: right;
+}
+
+.lower_rank_row_7{
+    margin-top: 11vh;
+
+}
+
+.tile_7_div{
+    position: relative;
+}
+.tile_7{
+   
+    width: 9vw;
+    float: right;
+}
+
+.lower_rank_row_10{
+    margin-top: 28vh; 
+    position: absolute;
+    bottom: 10vh;
+}
+
+.tile_10{
+    width: 9vw;
+    margin-left: 4vw;
+    /* padding-top: 35vh; */
+   
+}
+.tile_div{
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+}
+
+.tile_div_2{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+
+}
+.lower_rank_row_9{
+    margin-top: 13vh;
+
+}
+.card_detail{
+    position: absolute;
+    top: 3px;
+    width: 100%;
+}
+
+.rank,.name,.score{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 1.3vw;
+}
+
+.right_side{
+    height: 55vh;
+}
+
+.profile_pic{
+    width: 12.5vw;
+    height: 24.5vh;
+    padding: 1.5vw;
+    background: linear-gradient(344.54deg, #2B355A 40.19%, rgba(43, 53, 90, 0) 96.17%);
+    border: 2px solid #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 30px;
+    
+}
+
+.profile_div{
+    margin-left: 1.5vw;
+}
+
+.medal{
+    width: 9vw;
+}
+
+.medal_rank{
+    position: absolute;
+    top: 20%;
+
+}
+
+.rank_p{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 800;
+font-size: 2vw;
+
+text-align: center;
+
+color: rgba(0, 0, 0, 0.4);
+}
+
+// .medal_div{
+//     position: relative;
+
+//     margin-left: 2vw;
+// }
+.row_div{
+    margin-top: 3vh;
+}
+
+.medal_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 10vw;
+    align-items: center;
+    margin-left: 3vw;
+    position: relative;
+    margin-top: 3vh;
+}
+
+.overall_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 10vw;
+    align-items: center;
+    margin-left: 3vw;
+ 
+}
+
+.overall_score,.overall_score_label{
+    justify-content: center;
+}
+
+.overall_color{
+    background: #112AAF;
+    border-radius: 10px;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.overall_score,.overall_score_label{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 800;
+font-size: 1vw;
+color: #FFFFFF;
+
+}
+
+.top_10_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 23vh;
+}
+
+
+.tile_10_div{
+    position: relative;
+}
+.top_10_label{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 1.2vw;
+
+/* identical to box height */
+
+
+color: #1F3449;
+}
+
+.active{
+    background: #112AAF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+color: #FFFFFF;
+}
+
+.player_name_div{
+    position: absolute;
+    margin-top: 3vh;
+    width: 14vw;
+    
+    background: #112AAF;
+border-radius: 10px;
+}
+
+.player_name{
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 1vw;
+}
+
+.team_name{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 1.8vw;
+color: #2B355A;
+position: absolute;
+margin-top: 12vh;
 }
