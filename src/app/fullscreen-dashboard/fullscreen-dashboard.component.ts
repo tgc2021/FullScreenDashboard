@@ -25,6 +25,7 @@ export class FullscreenDashboardComponent implements OnInit {
   tile8:any
   tile9:any
   tile10:any
+  title:any
   team_name:any
   profile_gradient_color:any
   top5toppers:any
@@ -71,7 +72,8 @@ export class FullscreenDashboardComponent implements OnInit {
       
       this.background_image=this.fullscreen_response._fullscreen_themedetails[0].background_image
       console.log(this.background_image);
-      
+      this.title=this.fullscreen_response._fullscreen_themedetails[0].fs_title
+
       this.medal=this.fullscreen_response._fullscreen_themedetails[0].medal_image
       this.tile6=this.fullscreen_response._fullscreen_themedetails[0].tile_1
       this.tile7=this.fullscreen_response._fullscreen_themedetails[0].tile_2
