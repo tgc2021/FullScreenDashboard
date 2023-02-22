@@ -1,5 +1,5 @@
 .web-view{
-    background-image: url(../../assets/fullscreen_cricket/Cricket_FS_Dashboard.svg);
+    // background-image: url(../../assets/fullscreen_cricket/Cricket_FS_Dashboard.svg);
     width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
@@ -330,7 +330,7 @@ font-size: 1.3vw;
     width: 12.5vw;
     height: 24.5vh;
     padding: 1.5vw;
-    background: linear-gradient(344.54deg, #2B355A 40.19%, rgba(43, 53, 90, 0) 96.17%);
+    background: linear-gradient(var(--gradient));
     border: 2px solid #FFFFFF;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 30px;
@@ -379,7 +379,7 @@ color: rgba(0, 0, 0, 0.4);
     align-items: center;
     margin-left: 3vw;
     position: relative;
-    margin-top: 3vh;
+    margin-top: 7vh;
 }
 
 .overall_div{
@@ -397,7 +397,7 @@ color: rgba(0, 0, 0, 0.4);
 }
 
 .overall_color{
-    background: #112AAF;
+    background: var(--myvar);
     border-radius: 10px;
     padding: 1vw;
     display: flex;
@@ -406,13 +406,21 @@ color: rgba(0, 0, 0, 0.4);
     align-items: center;
 }
 
-.overall_score,.overall_score_label{
+.overall_score_label{
     font-family: 'Poppins';
 font-style: normal;
-font-weight: 800;
+font-weight: 500;
 font-size: 1vw;
 color: #FFFFFF;
 
+}
+
+.overall_score{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.4vw;
+    color: #FFFFFF;
 }
 
 .top_10_div{
@@ -439,7 +447,7 @@ color: #1F3449;
 }
 
 .active{
-    background: #112AAF;
+    background: var(--myvar);
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 color: #FFFFFF;
@@ -450,14 +458,14 @@ color: #FFFFFF;
     margin-top: 3vh;
     width: 14vw;
     
-    background: #112AAF;
+    background: var(--myvar);
 border-radius: 10px;
 }
 
 .player_name{
     font-family: "Poppins";
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1vw;
     text-align: center;
     color: #FFFFFF;
@@ -465,11 +473,14 @@ border-radius: 10px;
 }
 
 .team_name{
-    font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: 1.8vw;
-color: #2B355A;
-position: absolute;
-margin-top: 12vh;
+    width: 14vw;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5vw;
+    color: #2B355A;
+    position: absolute;
+    margin-top: 12vh;
+    text-align: center;
+
 }
