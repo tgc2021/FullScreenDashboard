@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { FullscreenLeaderboardComponent } from './fullscreen-leaderboard/fullscreen-leaderboard.component';
 import {MatCardModule} from '@angular/material/card';
 import { FullscreenDashboardComponent } from './fullscreen-dashboard/fullscreen-dashboard.component';
+import { Top10EmergingPlayerComponent } from './top10-emerging-player/top10-emerging-player.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FullscreenLeaderboardComponent,
-    FullscreenDashboardComponent
+    FullscreenDashboardComponent,
+    Top10EmergingPlayerComponent
   ],
   imports: [
     BrowserModule,

@@ -212,17 +212,38 @@ color: #FFFFFF;
     position: absolute;
     width: 100vw;
     overflow: hidden;
-    animation: mymove 8s infinite;
+    
+    animation: mymove 9s infinite ease-in-out;
   }
   
-  @keyframes mymove {
+  @keyframes mymove { 
+    0%   {
+      top: 9vh;
+      transition-delay: 1s;
     
-    0%   {top: 10vh}
-    25%  {top: 20vh;}
-    50%  {top: 30vh}
-    75%  {top: 40vh}
-    100%  {top: 54vh}
+    }
+    20%  {
+      top: 20vh;
+  
+      transition-delay: 1s;
+    
+    }
+    40%  {
+      top: 30vh;
+      transition-delay: 1s;
+    
+    }
+    60%  {top: 40vh;
+      transition-delay: 1s;
+    }
+    80%  {top: 52vh;
+      transition-delay: 1s;
+    
+    }
  
-    // 0%{top:10vh}
+    to {
+      top:9vh;
+      transition-delay: 1s;
+    }
 
   }
