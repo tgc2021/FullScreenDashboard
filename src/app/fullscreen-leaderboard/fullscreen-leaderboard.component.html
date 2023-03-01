@@ -4,19 +4,23 @@
     </div>
     <div class="upper-animated-card">
         <mat-card class="animated_transparent_card">
-            <mat-card class="upper_animated_card_move">
+            <mat-card class="upper_animated_card_move" style="background: linear-gradient('{{indexwise_move_card_gradient}}')">
                 <div class="row" >
                     <div class="col-1 d-flex align-items-center" style="position: relative;" >
-                        <div style="position: absolute;top:2.5vh;left:2.1vw ;color: #ffff;font-size: 1.8em;font-weight: 500;">{{index+1}}</div>
+                        <div style="position: absolute;top:2.5vh;left:2.1vw ;color: #ffff;font-size: 1.8em;font-weight: 500;">{{index}}</div>
                         <img style="height: 7vh;" src="{{indexwise_ranking_score_background_image}}"/>
                     </div>
-                    <div class="col-6 upper_name_div">
+                    <div class="col-4 upper_name_div">
                      <p class="upper_animated_name">{{indexwise_ranking_name}}</p>
         
                     </div>
+                    
                     <div class="col-3 team_div">
                         <p class="upper_animated_team">{{indexwise_ranking_team_name}}</p>
            
+                       </div>
+                       <div class="col-2 profile_logo">
+                            <img src="{{index_ranking_profile}}" alt="profile_logo" height="100%" width="100%">
                        </div>
                        <div class="col-2 score_div">
                         <p class="upper_animated_score">{{indexwise_ranking_weightage}}</p>
@@ -61,7 +65,7 @@
     <mat-card class="animated_card" *ngIf="i<5">
         <div class="row">
             <div class="col-1 d-flex align-items-center" style="position: relative;">
-               <div style="position: absolute;top:0.8vh;left:1.8vw ;color: #ffff;font-size: 1.2em;font-weight: 500;">{{i+1}}</div>
+               <div style="position: absolute;top:0.6vh;left:1.7vw ;color: #ffff;font-size: 1.2em;font-weight: 500;">{{i+1}}</div>
                
                 <img style="height: 5vh;" src="{{indexwise_ranking_score_background_image}}"/>
                
