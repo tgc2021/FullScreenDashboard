@@ -26,6 +26,7 @@ export class FullscreenLeaderboardComponent implements OnInit {
   url:any
   id:any
   apiid:any
+  gameid: any="296";
   constructor(public http:FullscreenServiceService, public element: ElementRef,public location:Location,public route:ActivatedRoute) { }
   ngOnInit(): void {
     
@@ -39,15 +40,15 @@ export class FullscreenLeaderboardComponent implements OnInit {
     .subscribe(params => {
       console.log(params); // { orderby: "price" }
       this.id = params['id'];
+      this.gameid=params['gameid'];
       console.log(this.id); // price
       localStorage.setItem('id',this.id)
     })
-
+  
     let body={
-      _game:"296",
+      _game:'296',
       _fs_type:"3"
     }
-
     this.http.fullscreen_top_ten_index_wise(body).subscribe((res) => {
     console.log(res);
     this.indexwise=res
@@ -57,6 +58,7 @@ export class FullscreenLeaderboardComponent implements OnInit {
     console.log(this.apiid);
 
 if(this.apiid=='undefined'){
+
   this.indexwise_title=this.indexwise.data.fs_details[0].label
   this.indexwise_background_image=this.indexwise.data.fs_details[0]._fullscreen_themedetails.background_image
   this.indexwise_ranking=this.indexwise.data.fs_details[0]._ranking_data
@@ -88,8 +90,6 @@ if(this.apiid=='undefined'){
 
 }
 else if(this.apiid==1){
-  console.log(this.apiid);
-  
   this.indexwise_title=this.indexwise.data.fs_details[1].label
   this.indexwise_background_image=this.indexwise.data.fs_details[1]._fullscreen_themedetails.background_image
   this.indexwise_ranking=this.indexwise.data.fs_details[1]._ranking_data
@@ -99,6 +99,85 @@ else if(this.apiid==1){
   this.indexwise_ranking_name=this.indexwise.data.fs_details[1]._ranking_data[0].first_name
   this.indexwise_ranking_team_name=this.indexwise.data.fs_details[1]._ranking_data[0].team_name
   this.indexwise_ranking_weightage=this.indexwise.data.fs_details[1]._ranking_data[0].weightage
+
+
+  setInterval(()=>{
+    if(this.index<5){
+      this.indexwise_ranking_name=this.indexwise.data.fs_details[1]._ranking_data[this.index].first_name
+      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[1]._ranking_data[this.index].team_name
+      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[1]._ranking_data[this.index].weightage
+      this.index++;
+    
+    }
+    if(this.index>4){
+      this.index=0
+      this.indexwise_ranking_name=this.indexwise.data.fs_details[1]._ranking_data[0].first_name
+      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[1]._ranking_data[0].team_name
+      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[1]._ranking_data[0].weightage
+  
+    }
+  },3000)
+  
+}
+else if(this.apiid==2){
+  this.indexwise_title=this.indexwise.data.fs_details[2].label
+  this.indexwise_background_image=this.indexwise.data.fs_details[2]._fullscreen_themedetails.background_image
+  this.indexwise_ranking=this.indexwise.data.fs_details[2]._ranking_data
+  this.indexwise_ranking_score_background_image=this.indexwise.data.fs_details[2]._fullscreen_themedetails.score_background_image
+  
+  
+  this.indexwise_ranking_name=this.indexwise.data.fs_details[2]._ranking_data[0].first_name
+  this.indexwise_ranking_team_name=this.indexwise.data.fs_details[2]._ranking_data[0].team_name
+  this.indexwise_ranking_weightage=this.indexwise.data.fs_details[2]._ranking_data[0].weightage
+
+
+  setInterval(()=>{
+    if(this.index<5){
+      this.indexwise_ranking_name=this.indexwise.data.fs_details[2]._ranking_data[this.index].first_name
+      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[2]._ranking_data[this.index].team_name
+      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[2]._ranking_data[this.index].weightage
+      this.index++;
+    
+    }
+    if(this.index>4){
+      this.index=0
+      this.indexwise_ranking_name=this.indexwise.data.fs_details[2]._ranking_data[0].first_name
+      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[2]._ranking_data[0].team_name
+      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[2]._ranking_data[0].weightage
+  
+    }
+  },3000)
+  
+}
+else if(this.apiid==3){
+  this.indexwise_title=this.indexwise.data.fs_details[3].label
+  this.indexwise_background_image=this.indexwise.data.fs_details[3]._fullscreen_themedetails.background_image
+  this.indexwise_ranking=this.indexwise.data.fs_details[3]._ranking_data
+  this.indexwise_ranking_score_background_image=this.indexwise.data.fs_details[3]._fullscreen_themedetails.score_background_image
+  
+  
+  this.indexwise_ranking_name=this.indexwise.data.fs_details[3]._ranking_data[0].first_name
+  this.indexwise_ranking_team_name=this.indexwise.data.fs_details[3]._ranking_data[0].team_name
+  this.indexwise_ranking_weightage=this.indexwise.data.fs_details[3]._ranking_data[0].weightage
+
+
+  setInterval(()=>{
+    if(this.index<5){
+      this.indexwise_ranking_name=this.indexwise.data.fs_details[3]._ranking_data[this.index].first_name
+      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[3]._ranking_data[this.index].team_name
+      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[3]._ranking_data[this.index].weightage
+      this.index++;
+    
+    }
+    if(this.index>4){
+      this.index=0
+      this.indexwise_ranking_name=this.indexwise.data.fs_details[3]._ranking_data[0].first_name
+      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[3]._ranking_data[0].team_name
+      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[3]._ranking_data[0].weightage
+  
+    }
+  },3000)
+  
 }
    
   })
