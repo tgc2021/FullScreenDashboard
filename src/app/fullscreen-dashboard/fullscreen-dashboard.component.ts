@@ -1,4 +1,5 @@
 import { Component, OnInit ,ElementRef} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FullscreenServiceService } from '../fullscreen-service.service';
 
 
@@ -50,16 +51,36 @@ export class FullscreenDashboardComponent implements OnInit {
   title10_name:any
   title10_name_split:any
   title10_name_final:any
-
+  location:any
   math = Math;
 
   theme_color:any
-  constructor(public http:FullscreenServiceService, public element: ElementRef) { }
+  _gameID:any
+  constructor(public http:FullscreenServiceService, public element: ElementRef, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
+    this.location=window.location.href
+    console.log(this.location);
+    var url = new URL(this.location)
+    console.log(url);
+
+    var checkUserID= this.route.queryParams
+    .subscribe(params => {
+      console.log(params); // { orderby: "price" }
+      this._gameID = params['_gameID'];
+      console.log(this._gameID); // price
+      
+    })
+
+
+//     if(this.location.includes('_gameID')){
+// console.log('game');
+ 
+//     }
+    
     let body={
-      _game:"296",
+      _game:this._gameID,
       _fs_type:"1"
     }
 
@@ -84,35 +105,120 @@ export class FullscreenDashboardComponent implements OnInit {
       this.title7_name=this.fullscreen_response.fs_data_toppers[6].first_name
       this.title7_name_split=this.title7_name.split(" ")
       console.log(this.title7_name_split);
-      this.title7_name_final=this.title7_name_split[0]+" "+this.title7_name_split[1]
+      if(this.title7_name_split[0].length>9){
+        this.title7_name_final=this.title7_name_split[0].substring(0,9)+'\n'+this.title7_name_split[0].substring(9)
+        this.title7_name_final=this.title7_name_final
+
+      }
+      else{
+        if(this.title7_name_split[1].length>8){
+          this.title7_name_final=this.title7_name_split[0]+" "+this.title7_name_split[1].slice(0,8)
+          this.title7_name_final=this.title7_name_final+"..."
+  
+        }
+        else{
+          this.title7_name_final=this.title7_name_split[0]+" "+this.title7_name_split[1]
+  
+        }
+      }
+   
+
+
       console.log(this.title7_name_final);
 
 
       this.title6_name=this.fullscreen_response.fs_data_toppers[5].first_name
       this.title6_name_split=this.title6_name.split(" ")
       console.log(this.title6_name_split);
-      this.title6_name_final=this.title6_name_split[0]+" "+this.title6_name_split[1]
+
+      if(this.title6_name_split[0].length>9){
+        this.title6_name_final=this.title6_name_split[0].substring(0,9)+'\n'+this.title6_name_split[0].substring(9)
+        this.title6_name_final=this.title6_name_final
+
+      }
+      else{
+        if(this.title6_name_split[1].length>8){
+          this.title6_name_final=this.title6_name_split[0]+" "+this.title6_name_split[1].slice(0,8)
+          this.title6_name_final=this.title6_name_final+"..."
+  
+        }
+        else{
+          this.title6_name_final=this.title6_name_split[0]+" "+this.title6_name_split[1]
+  
+        }
+      }
+    
+
       console.log(this.title6_name_final);
       
 
       this.title8_name=this.fullscreen_response.fs_data_toppers[7].first_name
       this.title8_name_split=this.title8_name.split(" ")
       console.log(this.title8_name_split);
-      this.title8_name_final=this.title8_name_split[0]+" "+this.title8_name_split[1]
+      if(this.title8_name_split[0].length>9){
+        this.title8_name_final=this.title8_name_split[0].substring(0,9)+'\n'+this.title8_name_split[0].substring(9)
+        this.title8_name_final=this.title8_name_final
+
+      }
+      else{
+        if(this.title8_name_split[1].length>8){
+          this.title8_name_final=this.title8_name_split[0]+" "+this.title8_name_split[1].slice(0,8)
+          this.title8_name_final=this.title8_name_final+"..."
+  
+        }
+        else{
+          this.title8_name_final=this.title8_name_split[0]+" "+this.title8_name_split[1]
+  
+        }
+  
+      }
+    
       console.log(this.title8_name_final);
 
       
       this.title9_name=this.fullscreen_response.fs_data_toppers[8].first_name
       this.title9_name_split=this.title9_name.split(" ")
       console.log(this.title9_name_split);
-      this.title9_name_final=this.title9_name_split[0]+" "+this.title9_name_split[1]
+
+      if(this.title9_name_split[0].length>9){
+        this.title9_name_final=this.title9_name_split[0].substring(0,9)+'\n'+this.title9_name_split[0].substring(9)
+        this.title9_name_final=this.title9_name_final
+
+      }
+      else{
+        if(this.title9_name_split[1].length>8){
+          this.title9_name_final=this.title9_name_split[0]+" "+this.title9_name_split[1].slice(0,8)
+          this.title9_name_final=this.title9_name_final+"..."
+        }
+        else{
+          this.title9_name_final=this.title9_name_split[0]+" "+this.title9_name_split[1]
+  
+        }
+      }
+     
       console.log(this.title9_name_final);
 
       
       this.title10_name=this.fullscreen_response.fs_data_toppers[9].first_name
       this.title10_name_split=this.title10_name.split(" ")
       console.log(this.title10_name_split);
-      this.title10_name_final=this.title10_name_split[0]+" "+this.title10_name_split[1]
+
+      if(this.title10_name_split[0].length>9){
+        this.title10_name_final=this.title10_name_split[0].substring(0,9)+'\n'+this.title10_name_split[0].substring(9)
+        this.title10_name_final=this.title10_name_final
+
+      }
+      else{
+        if(this.title10_name_split[1].length>8){
+          this.title10_name_final=this.title10_name_split[0]+" "+this.title10_name_split[1].slice(0,8)
+          this.title10_name_final=this.title10_name_final+"..."
+        }
+        else{
+          this.title10_name_final=this.title10_name_split[0]+" "+this.title10_name_split[1]
+  
+        }
+      }
+     
       console.log(this.title10_name_final);
 
       // var spaceCount = (this.title10_name_split[0].length - 1);
