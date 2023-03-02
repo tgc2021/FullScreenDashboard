@@ -101,7 +101,7 @@ if(this.apiid=='undefined'){
       this.index_ranking_profile=this.indexwise.data.fs_details[0]._ranking_data[this.index].profile_logo
       this.index++;
     }
-  },3000)
+  },1800)
   this.loadIndexWise()
 
 }
@@ -140,7 +140,7 @@ else if(this.apiid==1){
       this.index_ranking_profile=this.indexwise.data.fs_details[1]._ranking_data[this.index].profile_logo
       this.index++;
     }
-  },3000) 
+  },1800) 
   this.loadIndexWiseForId2()
 }
 else if(this.apiid==2){
@@ -178,7 +178,7 @@ else if(this.apiid==2){
       this.index_ranking_profile=this.indexwise.data.fs_details[2]._ranking_data[this.index].profile_logo
       this.index++;
     }
-  },3000)
+  },1800)
 
   this.loadIndexWiseForId3()
   
@@ -218,7 +218,8 @@ else if(this.apiid==3){
       this.index_ranking_profile=this.indexwise.data.fs_details[3]._ranking_data[this.index].profile_logo
       this.index++;
     }
-  },3000)
+  },1800)
+  this.loadIndexWiseForReturn()
 }
    
   })
@@ -233,7 +234,7 @@ loadIndexWise(){
     this.location.replaceState("indexwise_dashboard?id=1");
     location.reload()
    
-   },15000)  
+   },18000)  
 
 }
 loadIndexWiseForId2(){
@@ -242,7 +243,7 @@ loadIndexWiseForId2(){
     this.location.replaceState("indexwise_dashboard?id=2");
     location.reload()
    
-   },15000)
+   },18000)
    
    
 
@@ -254,9 +255,22 @@ loadIndexWiseForId3(){
     this.location.replaceState("indexwise_dashboard?id=3");
     location.reload()
    
-   },15000)
+   },18000)
+
+
+
    
    
+
+}
+
+loadIndexWiseForReturn(){
+  
+  setInterval(()=>{
+    this.location.replaceState(`fullscreen_dashboard?_gameID=${this._gameId}`);
+    location.reload()
+   
+   },18000)
 
 }
 
