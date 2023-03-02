@@ -56,7 +56,7 @@ export class FullscreenDashboardComponent implements OnInit {
 
   theme_color:any
   _gameID:any
-  constructor(public http:FullscreenServiceService, public element: ElementRef, private route: ActivatedRoute) { }
+  constructor(public http:FullscreenServiceService, public element: ElementRef, private route: ActivatedRoute,public _location:Location) { }
 
   ngOnInit(): void {
 
@@ -78,8 +78,11 @@ export class FullscreenDashboardComponent implements OnInit {
 // console.log('game');
  
 //     }
-    
+console.log(this._gameID);
+localStorage.setItem('_gameID',this._gameID)
+
     let body={
+      
       _game:this._gameID,
       _fs_type:"1"
     }
@@ -239,6 +242,8 @@ export class FullscreenDashboardComponent implements OnInit {
     this.profile=this.top5toppers[0].profile_logo
     this.team_name=this.top5toppers[0].team_name
 
+    this.loadIndexWise()
+
     setInterval(()=>{
     //  this.counter=0
       console.log(this.counter);
@@ -273,14 +278,13 @@ export class FullscreenDashboardComponent implements OnInit {
 
     })
 
-    this.loadIndexWise()
   
   }
 
   loadIndexWise(){
   
     setInterval(()=>{
-      this.location.replaceState("indexwise_dashboard");
+      this._location.replaceState("indexwise_dashboard");
       location.reload()
      
      },15000)  
