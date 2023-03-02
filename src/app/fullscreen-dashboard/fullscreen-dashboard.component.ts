@@ -1,7 +1,7 @@
 import { Component, OnInit ,ElementRef} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FullscreenServiceService } from '../fullscreen-service.service';
-
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -272,45 +272,20 @@ export class FullscreenDashboardComponent implements OnInit {
     console.log(this.counter);
 
     })
-    // this.name=this.leaderboard[0].name
-    // this.score=this.leaderboard[0].score
-    // this.rank=this.leaderboard[0].rank
-    // this.profile=this.leaderboard[0].profile
 
-    // setInterval(()=>{
-    // //  this.counter=0
-    //   console.log(this.counter);
-    
-    //   if(this.counter<4){
-       
-    //     this.activeclass= this.counter
-    //     this.counter++
-    //     this.name=this.leaderboard[this.counter].name
-    //     this.score=this.leaderboard[this.counter].score
-    //     this.rank=this.leaderboard[this.counter].rank
-    //     this.profile=this.leaderboard[this.counter].profile
-
-    //     console.log(this.name);
-        
-
-    //   }
-    //   else if(this.counter==4){
-    //     this.counter=0
-    //     this.name=this.leaderboard[0].name
-    //     this.score=this.leaderboard[0].score
-    //     this.rank=this.leaderboard[0].rank
-    //     this.profile=this.leaderboard[0].profile
-
-    //     console.log(this.counter);
-    //     this.activeclass= this.counter
-       
-    //   }
-    // },5000)
-    // console.log(this.counter);
-    
-
+    this.loadIndexWise()
+  
   }
 
+  loadIndexWise(){
+  
+    setInterval(()=>{
+      this.location.replaceState("indexwise_dashboard");
+      location.reload()
+     
+     },15000)  
+  
+  }
   // activeRank(index:any){
   //  this.activeclass=index
   //  this.id=index++

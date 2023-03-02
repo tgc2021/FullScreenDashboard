@@ -1,27 +1,29 @@
-<div class="web_view">
-
+<div class="web_view" style="background-image: url({{indexwise_background_image}})">
     <div class="title">
-        <h5 class="title_description">Top 10 Wickets Taken by Players</h5>
+        <h5 class="title_description">{{indexwise_title}}</h5>
     </div>
-
     <div class="upper-animated-card">
         <mat-card class="animated_transparent_card">
-            <mat-card class="upper_animated_card_move">
-                <div class="row">
-                    <div class="col-1">
-                        <span class="upper_animated_hex1" ></span>
+            <mat-card class="upper_animated_card_move" style="background: linear-gradient('{{indexwise_move_card_gradient}}')">
+                <div class="row" >
+                    <div class="col-1 d-flex align-items-center" style="position: relative;" >
+                        <div style="position: absolute;top:2.5vh;left:2.1vw ;color: #ffff;font-size: 1.8em;font-weight: 500;">{{index}}</div>
+                        <img style="height: 7vh;" src="{{indexwise_ranking_score_background_image}}"/>
+                    </div>
+                    <div class="col-4 upper_name_div">
+                     <p class="upper_animated_name">{{indexwise_ranking_name}}</p>
         
                     </div>
-                    <div class="col-6 upper_name_div">
-                     <p class="upper_animated_name">Syed Mujtaba Hussein Kirmani</p>
-        
-                    </div>
+                    
                     <div class="col-3 team_div">
-                        <p class="upper_animated_team">Black Panthers</p>
+                        <p class="upper_animated_team">{{indexwise_ranking_team_name}}</p>
            
                        </div>
+                       <div class="col-2 profile_logo">
+                            <img src="{{index_ranking_profile}}" alt="profile_logo" height="100%" width="100%">
+                       </div>
                        <div class="col-2 score_div">
-                        <p class="upper_animated_score">45678</p>
+                        <p class="upper_animated_score">{{indexwise_ranking_weightage}}</p>
            
                        </div>
                 </div>
@@ -55,134 +57,48 @@
         </mat-card>
     </div> -->
 <!------------------------------------------------ First Card  ---------------------------------------------------->
-<div class="animated_card_div">
-    <mat-card class="animated_card">
-        <div class="row">
-            <div class="col-1">
-                <span class="hex1" ></span>
 
-            </div>
-            <div class="col-6 name_div">
-             <p class="name">Syed Mujtaba Hussein Kirmani</p>
-
-            </div>
-            <div class="col-3 team_div">
-                <p class="team">Black Panthers</p>
-   
-               </div>
-               <div class="col-2 score_div">
-                <p class="score">45678</p>
-   
-               </div>
-        </div>
-        
-    </mat-card>
-</div>
-<!------------------------------------------------ Second Card  ---------------------------------------------------->
-
-<div class="animated_card_div">
-    <mat-card class="animated_card">
-        <div class="row">
-            <div class="col-1">
-                <span class="hex1" ></span>
-
-            </div>
-            <div class="col-6 name_div">
-             <p class="name">Chetandra Pratap Singh Chauhan</p>
-
-            </div>
-            <div class="col-3 team_div">
-                <p class="team">Dominators </p>
-   
-               </div>
-               <div class="col-2 score_div">
-                <p class="score">43210</p>
-   
-               </div>
-        </div>
-        
-    </mat-card>
-</div>
-
-<!------------------------------------------------ Third Card  ---------------------------------------------------->
-
-<div class="animated_card_div">
-    <mat-card class="animated_card">
-        <div class="row">
-            <div class="col-1">
-                <span class="hex1" ></span>
-
-            </div>
-            <div class="col-6 name_div">
-             <p class="name">Roger Michael Humphrey Binny</p>
-
-            </div>
-            <div class="col-3 team_div">
-                <p class="team">High Voltage </p>
-   
-               </div>
-               <div class="col-2 score_div">
-                <p class="score">41098</p>
-   
-               </div>
-        </div>
-        
-    </mat-card>
-</div>
-
-<!------------------------------------------------ Forth Card  ---------------------------------------------------->
-
-<div class="animated_card_div">
-    <mat-card class="animated_card">
-        <div class="row">
-            <div class="col-1">
-                <span class="hex1" ></span>
-
-            </div>
-            <div class="col-6 name_div">
-             <p class="name">Bapu Krishnarao Venkatesh Prasad</p>
-
-            </div>
-            <div class="col-3 team_div">
-                <p class="team">One Shot Killers </p>
-   
-               </div>
-               <div class="col-2 score_div">
-                <p class="score">39988</p>
-   
-               </div>
-        </div>
-        
-    </mat-card>
-</div>
 
 <!------------------------------------------------ Fifth Card  ---------------------------------------------------->
 
-<div class="animated_card_div">
-    <mat-card class="animated_card">
+<div class="animated_card_div" *ngFor="let res of indexwise_ranking;let i=index" >
+    <mat-card class="animated_card" *ngIf="i<5">
         <div class="row">
-            <div class="col-1">
-                <span class="hex1" ></span>
+            <div class="col-1 d-flex align-items-center" style="position: relative;">
+               <div style="position: absolute;top:0.6vh;left:1.7vw ;color: #ffff;font-size: 1.2em;font-weight: 500;">{{i+1}}</div>
+               
+                <img style="height: 5vh;" src="{{indexwise_ranking_score_background_image}}"/>
+               
+                
 
             </div>
-            <div class="col-6 name_div">
-             <p class="name">Erapalli Anantharao</p>
+            <div class="col-6 name_div d-flex align-items-center">
+             <p class="name">{{res.first_name}}</p>
 
             </div>
-            <div class="col-3 team_div">
-                <p class="team">Royal Challengers </p>
+
+            <div class="col-3 team_div d-flex align-items-center">
+                <p class="team">{{res.team_name}}</p>
    
                </div>
-               <div class="col-2 score_div">
-                <p class="score">37890</p>
+               <div class="col-2 score_div d-flex align-items-center">
+                <p class="score">{{res.weightage}}</p>
    
                </div>
+            <!-- <div class="col-3 team_div d-flex align-items-center">
+                <p class="team">{{player.Team_name}}</p>
+   
+               </div>
+               <div class="col-2 score_div d-flex align-items-center">
+                <p class="score">{{player.points}}</p>
+   
+               </div> -->
         </div>
         
     </mat-card>
 </div>
 
-</div>
+
 
 
 <div class="lower_five_cards">
@@ -194,15 +110,15 @@
             </div>
 
             <div class="col-6">
-                <p class="lower_player_name">Player Name</p> 
+                <p class="lower_player_name">{{indexwise_ranking[5].first_name}}</p> 
              </div>
 
              <div class="col-3">
-                <p class="lower_team_name">Team Name</p> 
+                <p class="lower_team_name">{{indexwise_ranking[5].team_name}}</p> 
              </div>
 
              <div class="col-2">
-                <p class="lower_score">000000</p> 
+                <p class="lower_score">{{indexwise_ranking[5].weightage}}</p> 
              </div>
         </div>
 
@@ -213,15 +129,15 @@
             </div>
 
             <div class="col-6">
-                <p class="lower_player_name">Player Name</p> 
+                <p class="lower_player_name">{{indexwise_ranking[6].first_name}}</p> 
              </div>
 
              <div class="col-3">
-                <p class="lower_team_name">Team Name</p> 
+                <p class="lower_team_name">{{indexwise_ranking[6].team_name}}</p> 
              </div>
 
              <div class="col-2">
-                <p class="lower_score">000000</p> 
+                <p class="lower_score">{{indexwise_ranking[6].weightage}}</p> 
              </div>
         </div>
 
@@ -231,15 +147,15 @@
             </div>
 
             <div class="col-6">
-                <p class="lower_player_name">Player Name</p> 
+                <p class="lower_player_name">{{indexwise_ranking[7].first_name}}</p> 
              </div>
 
              <div class="col-3">
-                <p class="lower_team_name">Team Name</p> 
+                <p class="lower_team_name">{{indexwise_ranking[7].team_name}}</p> 
              </div>
 
              <div class="col-2">
-                <p class="lower_score">000000</p> 
+                <p class="lower_score">{{indexwise_ranking[7].weightage}}</p> 
              </div>
         </div>
 
@@ -249,15 +165,15 @@
             </div>
 
             <div class="col-6">
-                <p class="lower_player_name">Player Name</p> 
+                <p class="lower_player_name">{{indexwise_ranking[8].first_name}}</p> 
              </div>
 
              <div class="col-3">
-                <p class="lower_team_name">Team Name</p> 
+                <p class="lower_team_name">{{indexwise_ranking[8].team_name}}</p> 
              </div>
 
              <div class="col-2">
-                <p class="lower_score">000000</p> 
+                <p class="lower_score">{{indexwise_ranking[8].weightage}}</p> 
              </div>
         </div>
 
@@ -268,15 +184,15 @@
             </div>
 
             <div class="col-6">
-                <p class="lower_player_name">Player Name</p> 
+                <p class="lower_player_name">{{indexwise_ranking[9].first_name}}</p> 
              </div>
 
              <div class="col-3">
-                <p class="lower_team_name">Team Name</p> 
+                <p class="lower_team_name">{{indexwise_ranking[9].team_name}}</p> 
              </div>
 
              <div class="col-2">
-                <p class="lower_score">000000</p> 
+                <p class="lower_score">{{indexwise_ranking[9].weightage}}</p> 
              </div>
         </div>
     </mat-card>
