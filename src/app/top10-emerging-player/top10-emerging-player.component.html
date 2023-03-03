@@ -7,8 +7,9 @@
             <div class="" *ngFor="let Player of ranking_data;let i=index" >
                 <div *ngIf="i<5"  [ngClass]="i != index?'emerging_card':'emerging_card_expanded'" style="background: url({{themeDetails.score_background_image}});background-size: 100% 100%;
                 background-repeat: no-repeat;
-                height: 55vh;
-                width: 18vw;">
+                min-height: 55vh;
+                width: 18vw;
+                padding: 1%;">
                     <div class="rank">
                         {{i+1|ordinals}} Place
                     </div>
@@ -46,7 +47,7 @@
         
         <div   class="bottom_5Card">
             <div  class="bottom_card"  *ngFor="let Bottomplayer of ranking_data;let index=index">
-                <div class="smallCard col-4" *ngIf="index>=5" style="background:url({{this.themeDetails.small_card_image}});background-size: 100% 100%;min-width:32vw;" >
+                <div class="smallCard col-4" *ngIf="index>=5" style="background:url({{this.themeDetails.small_card_image}});background-size: 100% 100%;min-width:31vw;" >
                
                     <div class="small_rank">{{index+1}}</div>
                     <div class="small_name">{{Bottomplayer.first_name}}</div>
@@ -58,15 +59,12 @@
                         <ng-template #downArrow>
                             <img src="assets/fullscreen_cricket/arrowDown.png" alt="">
                         </ng-template>
-                        
                         {{Bottomplayer.growth_percentage}}%
                     </div>
                     <div class="bottomFairPlayPoints">
                         <div class="bottom_points">{{Bottomplayer.weightage}}</div>
                         <div class="bottom_fairPlayText">Fair Play Points</div>
                     </div>
-        
-        
                 </div>
                 
             </div>

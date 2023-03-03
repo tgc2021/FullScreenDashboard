@@ -138,7 +138,7 @@ ngOnInit(): void {
      
       
     }, 3000);
-    this.loadIndexWiseForReturn()
+    // this.loadIndexWiseForReturn()
 
     }
     

@@ -71,8 +71,6 @@ if(this.apiid=='undefined'){
   this.indexwise_background_image=this.indexwise.data.fs_details[0]._fullscreen_themedetails.background_image
   this.indexwise_ranking=this.indexwise.data.fs_details[0]._ranking_data
   this.indexwise_ranking_score_background_image=this.indexwise.data.fs_details[0]._fullscreen_themedetails.score_background_image
-  
-  
   this.indexwise_ranking_name=this.indexwise.data.fs_details[0]._ranking_data[0].first_name
   this.indexwise_ranking_team_name=this.indexwise.data.fs_details[0]._ranking_data[0].team_name
   this.indexwise_ranking_weightage=this.indexwise.data.fs_details[0]._ranking_data[0].weightage
@@ -82,16 +80,12 @@ if(this.apiid=='undefined'){
 
   setInterval(()=>{
    
-    if(this.index>0 && this.index<6){
-     
+    if(this.index>0 && this.index<6){   
       this.indexwise_ranking_name=this.indexwise.data.fs_details[0]._ranking_data[this.index].first_name
       this.indexwise_ranking_team_name=this.indexwise.data.fs_details[0]._ranking_data[this.index].team_name
       this.indexwise_ranking_weightage=this.indexwise.data.fs_details[0]._ranking_data[this.index].weightage
       this.index_ranking_profile=this.indexwise.data.fs_details[0]._ranking_data[this.index].profile_logo
       this.index++;
-     
-   
-    
     }
     if(this.index==6){
       this.index=0
