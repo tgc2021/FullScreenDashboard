@@ -118,7 +118,7 @@ ngOnInit(): void {
      
       
     }, 3000);
-    this.loadEmergingTop10ForId3()
+     this.loadEmergingTop10ForId3()
     }
     else if(this.apiid==3){
       this.themeDetails=res.data.fs_details[3]._fullscreen_themedetails;

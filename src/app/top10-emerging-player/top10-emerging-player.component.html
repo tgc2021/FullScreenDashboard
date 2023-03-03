@@ -5,9 +5,9 @@
     <div class="main_container" >
         <div class="card_container">
             <div class="" *ngFor="let Player of ranking_data;let i=index" >
-                <div *ngIf="i<5"  [ngClass]="i != index?'emerging_card':'emerging_card_expanded'" style="background: url({{themeDetails.score_background_image}}); background-size: 100% 100%;
+                <div *ngIf="i<5"  [ngClass]="i != index?'emerging_card':'emerging_card_expanded'" style="background: url({{themeDetails.score_background_image}});background-size: 100% 100%;
                 background-repeat: no-repeat;
-                height: 57vh;
+                height: 55vh;
                 width: 18vw;">
                     <div class="rank">
                         {{i+1|ordinals}} Place
@@ -46,7 +46,7 @@
         
         <div   class="bottom_5Card">
             <div  class="bottom_card"  *ngFor="let Bottomplayer of ranking_data;let index=index">
-                <div class="smallCard col-4" *ngIf="index>=5" style="background:url({{this.themeDetails.small_card_image}});background-size: 100% 100%;width: 32vw;" >
+                <div class="smallCard col-4" *ngIf="index>=5" style="background:url({{this.themeDetails.small_card_image}});background-size: 100% 100%;min-width:32vw;" >
                
                     <div class="small_rank">{{index+1}}</div>
                     <div class="small_name">{{Bottomplayer.first_name}}</div>
