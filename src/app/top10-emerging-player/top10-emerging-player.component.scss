@@ -118,7 +118,7 @@
     /* identical to box height */
 
 
-    color: #79398F;
+    color: var(--myvar);
 
 }
 
@@ -145,7 +145,7 @@
     width: auto;
     padding: 5%;
     height: 6vh;
-    background: #583BA2;
+    background: var(--myvar);
     border: 1px solid #FFFFFF;
     border-radius: 5px;
     font-family: 'Poppins';
@@ -200,7 +200,7 @@
     font-size: 1.2vw;
     text-align: center;
     /* identical to box height */
-    color: #79398F;
+    color:  var(--myvar);
 }
 
 .small_name {

@@ -28,13 +28,8 @@
                     </div>
         
                     <div class="growth_percentage" style="margin-bottom: 5%;">
-                        <div *ngIf="Player.arrow_color=='green';then upArrow else downArrow"></div>
-                        <ng-template #upArrow>
-                            <img src="assets/fullscreen_cricket/arrowUp.png" alt="">
-                        </ng-template>
-                        <ng-template #downArrow>
-                            <img src="assets/fullscreen_cricket/arrowDown.png" alt="">
-                        </ng-template>
+                        <img src="assets/fullscreen_cricket/arrowUp.png" alt="">
+                      
                         {{Player.growth_percentage}}%
         
                     </div>
@@ -52,13 +47,8 @@
                     <div class="small_rank">{{index+1}}</div>
                     <div class="small_name">{{Bottomplayer.first_name}}</div>
                     <div class="growth_small">
-                        <div *ngIf="Bottomplayer.arrow_color=='green';then upArrow else downArrow"></div>
-                        <ng-template #upArrow>
-                            <img src="assets/fullscreen_cricket/arrowUp.png" alt="">
-                        </ng-template>
-                        <ng-template #downArrow>
-                            <img src="assets/fullscreen_cricket/arrowDown.png" alt="">
-                        </ng-template>
+                        <img src="assets/fullscreen_cricket/arrowUp.png" alt="">
+                        
                         {{Bottomplayer.growth_percentage}}%
                     </div>
                     <div class="bottomFairPlayPoints">
