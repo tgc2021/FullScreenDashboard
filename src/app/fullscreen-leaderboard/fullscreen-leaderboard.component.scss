@@ -26,10 +26,10 @@
 }
 
 .animated_card{
-background: linear-gradient(var(--myvar));
-border: 1px solid #FFFFFF;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.12) 100%);
+  border: 1px solid #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 height: 9vh;
 }
 
@@ -80,6 +80,7 @@ height: 9vh;
   align-items: center;
   justify-content: center;
   height: 9vh;
+  animation: moveProfile 2s infinite ease-in;
 
 }
 
@@ -92,7 +93,10 @@ height: 9vh;
   color: #FFFFFF;
 }
 
+.score_rankImage{
+  background-repeat: no-repeat;
 
+}
 .score_div{
   display: flex;
   align-items: center;
@@ -160,10 +164,23 @@ color: #FFFFFF;
   display:flex;
   justify-content: center;
   /* identical to box height */
-      
   color: #FFFFFF;
 }
-
+.score_image_big{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 100% 100% !important;
+}
+.score_image_small{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  color: #ffff;
+  font-size: 1.2em;
+  background-size: 100% 100% !important;
+}
 .upper_animated_card_move{
   background: linear-gradient(var(--myvar));
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -221,24 +238,27 @@ color: #FFFFFF;
 }
 
 .animated_transparent_card{
+  
+  
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 0;
   height: 40vh;
   position: absolute;
   width: 100vw;
   overflow: hidden;
-  animation: mymove 9s infinite ease-in-out;
+  animation: mymove 7s infinite ease-in-out;
+  // animation-direction: alternate;
 }
+
 
 @keyframes mymove { 
   0%   {
     top: 9vh;
     transition-delay: 1s;
-  
-  
+    
   }
-  20%  {
+  20%{
     top: 20vh;
-
     transition-delay: 1s;
   
   }
@@ -247,17 +267,36 @@ color: #FFFFFF;
     transition-delay: 1s;
   
   }
-  60%  {top: 40vh;
+  60%  {top: 42vh;
     transition-delay: 1s;
   }
   80%  {top: 52vh;
     transition-delay: 1s;
   
   }
-
-  to {
-    top:9vh;
+  98%{
+    top: 52vh;
+    transition-delay: 1s;
+  }
+  100%{
+    top: 9vh;
     transition-delay: 1s;
   }
 
+ 
+  
+
+
+}
+
+@keyframes moveProfile  {
+
+  0%{
+    transform: scale(1.0);
+  }
+  to{
+    transform: scale(1.1);
+  }
+  
+  
 }

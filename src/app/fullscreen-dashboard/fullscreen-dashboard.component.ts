@@ -287,7 +287,7 @@ localStorage.setItem('_gameID',this._gameID)
       this._location.replaceState("indexwise_dashboard");
       location.reload()
      
-     },50000)  
+     },25000)  
   
   }
   // activeRank(index:any){
