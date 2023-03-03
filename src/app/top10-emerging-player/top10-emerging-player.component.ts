@@ -157,7 +157,7 @@ loadEmergingTop10(){
     this.location.replaceState(`Emerging_player_dashboard?id=1`);
     location.reload()
    
-   },18000)  
+   },36000)  
 
 }
 loadEmergingTop10ForId2(){
@@ -166,7 +166,7 @@ loadEmergingTop10ForId2(){
     this.location.replaceState("Emerging_player_dashboard?id=2");
     location.reload()
    
-   },18000)
+   },36000)
    
    
 
@@ -178,12 +178,8 @@ loadEmergingTop10ForId3(){
     this.location.replaceState("Emerging_player_dashboard?id=3");
     location.reload()
    
-   },18000)
+   },36000)
 
-
-
-   
-   
 
 }
 loadIndexWiseForReturn(){
@@ -192,7 +188,7 @@ loadIndexWiseForReturn(){
     this.location.replaceState(`fullscreen_dashboard?_gameID=${this._gameId}`);
     location.reload()
    
-   },18000)
+   },36000)
 
 }
 
