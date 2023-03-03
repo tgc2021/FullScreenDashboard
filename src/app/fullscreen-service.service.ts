@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FullscreenServiceService {
   URLstring = environment.apiURL
-  // Path='coroebus-tgc-api-levels';
-  Path='coroebus-beta-api-levels';
+  Path='coroebus-tgc-api-levels';
+  // Path='coroebus-beta-api-levels';
   constructor(public Http:HttpClient) { }
 
    
