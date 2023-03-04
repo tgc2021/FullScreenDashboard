@@ -1,34 +1,160 @@
-<div class="web-view">
+<div class="web-view" style="background-image: url({{background_image}});">
 <div class="row">
-    <div class="col-5 d-flex justify-content-end" >
-    <!-- <img class="left_side_stairs" src="assets/fullscreen_cricket/left_side_leader_board.png"/> -->
-    <div class="col-12 left_side_stair" style="background-size: 100% 100%;">
+  
+    <div class="col-6 d-flex justify-content-end" >
+    <div class="col-1"></div>
+    <div class="col-11" style="background-size: 100% 100%; margin-top: 7vh;">
       
-      <mat-card class="top_5_leaderboard">
+    
+      <div *ngFor="let res of top5toppers; let i=index">
+        <mat-card class="top_5_leaderboard_second" [class.active]="i==counter" *ngIf="i<5">
+          <div class="row card_detail">
+            <div class="col-2 rank">{{res.rankingtable_number}}</div>
+            <div class="col-8 name">{{res.first_name}}</div>
+            <div class="col-2 score">{{math.trunc(res.weightage)}}</div>
+          </div>
+        </mat-card>
+      </div >
+      
+  
+      <div class="row">
+        <div class="tile_div col-5 g-0">
+          <div class="row lower_rank_row">
+            <div class="col-6 g-0"></div>
+            <div class="col-6">
+              <div class="tile_6_div">
+                <div>
+                  <img class="tile_6" src="{{tile6}}"/>
+                  <div class="tile_6_name">{{title6_name_final}} </div>
+                  <div class="tile_6_score">{{math.trunc(top5toppers[5].weightage)}}</div>
 
-      </mat-card>
-      <mat-card class="top_5_leaderboard_second">
+                </div>
+                
+              </div>
+            </div>
+            </div>
+        
+          
+            <div class="row lower_rank_row_8">
+              <div class="col-6 g-0"></div>
+              <div class="col-6">
+                <div class="tile_8_div">
+                  <div>
+                    <img class="tile_8" src="{{tile8}}"/>
+                    <div class="tile_8_name">{{title8_name_final}}</div>
+                    <div class="tile_8_score">{{math.trunc(top5toppers[7].weightage)}}</div>
+                  </div>
+                </div>
 
-      </mat-card>
-      <mat-card class="top_5_leaderboard_second">
+              </div>
+            </div>
 
-      </mat-card>
-      <mat-card class="top_5_leaderboard_second">
+       
 
-      </mat-card>
-      <mat-card class="top_5_leaderboard_second">
+          <div class="row lower_rank_row_9">
+            <div class="col-6 g-0"></div>
+            <div class="col-6">
+              <div class="tile_9_div">
+                <div>
+                  <img class="tile_9" src="{{tile9}}"/>
+                  <div class="tile_9_name">{{title9_name_final}}</div>
+                  <div class="tile_9_score">{{math.trunc(top5toppers[8].weightage)}}</div>
+                </div>
+              </div>
 
-      </mat-card>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="col-1"></div>
+        <div class="tile_div_2 col-5">
+        <div class="row lower_rank_row_7">
+          <div class="col-8 g-0">
+            <div class="tile_7_div">
+              <div>
+                <img class="tile_7" src="{{tile7}}"/>
+                <div class="tile_7_name">{{title7_name_final}}</div>
+                <div class="tile_7_score">{{math.trunc(top5toppers[6].weightage)}}</div>
+
+              </div>
+  
+            </div>
+          </div>
+          <div class="col-4">
+           
+          </div>
+          
+        </div>
+         
+
+          <div class="row lower_rank_row_10">
+
+            <div class="col-8 g-0">
+            <div class="tile_10_div">
+              <div>
+                <img class="tile_10" src="{{tile10}}"/>
+                <div class="tile_10_name">{{title10_name_final}}</div>
+                <div class="tile_10_score">{{math.trunc(top5toppers[9].weightage)}}</div>
+              </div>
+
+             </div>
+            </div>
+            <div class="col-4"></div>
+
+          </div>
+
+        </div>
+        <div class="col-2"></div>
+      </div>
+     
     </div>
     
-    <div class="d-flex">
-      <img class="tile_6" src="./../../assets/fullscreen_cricket/Cricket tile_no_6.svg"/>
+   
+    <!-- <div class="d-flex">
+      <img class="tile_6" src="assets/fullscreen_cricket/Cricket tile_no_6.svg"/>
     </div>
+
+    <div class="d-flex">
+      <img class="tile_6" src="assets/fullscreen_cricket/Cricket tile_no_6.svg"/>
+    </div> -->
     </div>
    
-    <!-- <div class="col-7 d-flex justify-content-center align-items-center">
-      <img class="right_profile_side" src="assets/fullscreen_cricket/profile_background.svg"/>  
+    <div class="col-6">
+      <div class="top_10_div">
+        <h5 class="top_10_label">{{title}}</h5>
+      </div>
+     <div class="d-flex justify-content-start align-items-center right_side">
+      <div class="d-flex row_div">
+        <div class="profile_div">
+            <img class="profile_pic" src="{{profile}}"/>  
+            <div class="player_name_div">
+              <p class="player_name">{{name}}</p>
+             </div>
+             <div class="team_name">{{team_name}}</div>
 
-    </div> -->
+           </div>
+        </div>
+
+        <div class="medal_div">
+          <img class="medal" src="{{medal}}"/>  
+          <div class="medal_rank"><p class="rank_p">{{rank}}</p></div>
+      </div>
+
+      <div class="overall_div">
+        <div class="overall_color">
+        <div class="overall_score">{{math.trunc(score)}}</div>
+        <div class="overall_score_label">Overall Score</div>
+      </div>
+    </div>
+
+      </div>
+
+     
+  
+    
+    </div>
+
+
 </div>
 </div>
