@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild,ElementRef } from '@angular/core';
-<<<<<<< HEAD
-import { AnimationEvent } from "@angular/animations";
-=======
 import { FullscreenServiceService } from '../fullscreen-service.service';
 import {Location} from '@angular/common'
 import { ActivatedRoute } from '@angular/router';
->>>>>>> ec07b38e4989f08ffccca1171f2c4bc78d0d075c
 
 // import { fade, slide, listAnimation } from "@angular/animations";
 @Component({
@@ -16,67 +12,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class FullscreenLeaderboardComponent implements OnInit {
-<<<<<<< HEAD
-  
-  player: any;
-  index: any=0;
-
-
-  constructor() { }
-
-  Players=[{
-    id:1,
-    name:"Shubham Karad",
-    Team_name:'FearlessFerrari',
-    points:2555
-  },
-  {
-    id:2,
-    name:"Kartikee Pawar",
-    Team_name:'FearlessFerrari',
-    points:2545
-
-
-  },
-  {
-    id:3,
-    name:"Raunak Shringarpure",
-    Team_name:'FearlessFerrari',
-    points:2540
-
-
-  },
-  {
-    id:4,
-    name:"Rajat Bhat",
-    Team_name:'FearlessFerrari',
-    points:2535
-  },
-  {
-    id:5,
-    name:"Shubham Dhekolkar",
-    Team_name:'FearlessFerrari',
-    points:2543
-
-
-  }
-  
-
-]
-  
-  ngOnInit(): void {
-    this.Players
-    setInterval(()=>{
-      if(this.index>=0 && this.index<=4){
-        this.index++;
-      }
-      else{
-        this.index=0;
-      }
-    },1700)
-   
-}
-=======
   player: any;
   index: any=0;
   indexwise_response:any
@@ -164,7 +99,6 @@ if(this.apiid=='undefined'){
   },1350)
   this.loadIndexWise()
 
->>>>>>> ec07b38e4989f08ffccca1171f2c4bc78d0d075c
 }
 else if(this.apiid==1){
   this.indexwise_title=this.indexwise.data.fs_details[1].label

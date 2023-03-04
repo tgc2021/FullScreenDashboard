@@ -1,25 +1,13 @@
-<<<<<<< HEAD
-import { Component, OnInit } from '@angular/core';
-=======
 import { Component , OnInit,ElementRef } from '@angular/core';
 import { Location } from '@angular/common';
 import { FullscreenServiceService } from '../fullscreen-service.service';
 import { ActivatedRoute } from '@angular/router';
->>>>>>> ec07b38e4989f08ffccca1171f2c4bc78d0d075c
 
 @Component({
   selector: 'app-top10-emerging-player',
   templateUrl: './top10-emerging-player.component.html',
   styleUrls: ['./top10-emerging-player.component.scss']
 })
-<<<<<<< HEAD
-export class Top10EmergingPlayerComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-=======
 export class Top10EmergingPlayerComponent {
   players:any;
   scale: any=1.0;
@@ -210,6 +198,5 @@ loadIndexWiseForReturn(){
 }
 
 
->>>>>>> ec07b38e4989f08ffccca1171f2c4bc78d0d075c
 
 }
