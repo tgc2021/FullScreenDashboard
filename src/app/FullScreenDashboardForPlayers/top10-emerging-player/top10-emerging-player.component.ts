@@ -1,6 +1,6 @@
 import { Component , OnInit,ElementRef } from '@angular/core';
 import { Location } from '@angular/common';
-import { FullscreenServiceService } from '../fullscreen-service.service';
+import { FullscreenServiceService } from '../../fullscreen-service.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -31,8 +31,12 @@ export class Top10EmergingPlayerComponent {
   }
   
 
-
+  
 ngOnInit(): void {
+
+  
+
+ 
 
 
   this.windowlocation=window.location.href
@@ -143,7 +147,7 @@ ngOnInit(): void {
      
       
     }, 3000);
-    this.loadIndexWiseForReturn()
+    this.loadOverallTL()
 
     }
     
@@ -187,16 +191,15 @@ loadEmergingTop10ForId3(){
 
 
 }
-loadIndexWiseForReturn(){
+loadOverallTL(){
   
   setInterval(()=>{
-    this.location.replaceState(`fullscreen_dashboard?_gameID=${this._gameId}`);
+    this.location.replaceState('Overall_TL');
     location.reload()
    
    },36000)
 
 }
-
 
 
 }

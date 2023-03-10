@@ -1,0 +1,69 @@
+<div class="main-div" style="background: url({{this.themeDetails.big_card_image}});">
+    <div class="Top_ten_title">
+        {{label}}
+        
+    </div>
+   <div class="main-container">
+        <div class="top5Players">
+            <div class="card_container" *ngFor="let Player of ranking_data;let i=index">
+                <div class="" *ngIf="i<5">
+                    <div   [ngClass]="i != index?'emerging_card':'emerging_card_expanded'" style="background: url({{themeDetails.score_background_image}});background-size:100% 100%;
+                    background-repeat: no-repeat;
+                    min-width: 16vw;
+                    padding: 5%;
+                    ">
+                        <div class="rank">
+                            {{i+1|ordinals}} Place
+                        </div>
+                        <div class="profile_image">
+                            <img src="{{Player.profile_logo}}" alt="profile_image" height="100%" width="100%">
+                        </div>
+                        <div class="profile_name">
+                            {{Player.first_name}}
+                        </div>
+                        <div class="profile_team_name">
+                            {{Player.team_name}}
+                        </div>
+                        <div class="profile_points">
+                            <div class="fair_playPoints">{{Player.weightage}}</div>
+                            <div class="text_fair_play_points">{{Player.game_element}}</div>
+                        </div>
+            
+                        <!-- <div class="growth_percentage" style="margin-bottom: 5%;">
+                            <img src="assets/fullscreen_cricket/arrowUp.png" alt="">
+                          
+                            {{Player.growth_percentage}}%
+            
+                        </div> -->
+                    </div>
+                    
+                    
+        
+                </div>
+            </div>
+        </div>
+        <div class="bottom5Players">
+            <div  class="bottom_card"  *ngFor="let Bottomplayer of ranking_data;let index=index">
+                <div class="smallCard col-6" *ngIf="index>=5" style="background:url({{this.themeDetails.small_card_image}});background-size: 100% 100%;" >
+                    <div class="small_rank">{{index+1}}</div>
+                    <div class="small_name">{{Bottomplayer.first_name}}</div>
+                    <!-- <div class="growth_small">
+                        <img src="assets/fullscreen_cricket/arrowUp.png" alt="">
+                        
+                        {{Bottomplayer.growth_percentage}}%
+                    </div> -->
+                    <div class="bottomFairPlayPoints">
+                        <div class="bottom_points">{{Bottomplayer.weightage}}</div>
+                        <div class="bottom_fairPlayText">{{Bottomplayer.game_element}}</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+
+   </div>
+    
+   
+</div>

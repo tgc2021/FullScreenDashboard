@@ -1,0 +1,104 @@
+<div class="web_view" style="background-image: url({{indexwise_background_image}})">
+    <div class="title">
+        <h5 class="title_description">{{indexwise_title}}</h5>
+    </div>
+    <div class="upper-animated-card">
+        <mat-card class="animated_transparent_card">
+            <mat-card class="upper_animated_card_move" style="background: linear-gradient('{{indexwise_move_card_gradient}}')">
+                <div class="row" >
+                    <div class="col-1 score_image_big"  
+                    style="background:url({{indexwise_ranking_score_background_image}});
+                    "
+                    >
+                        <div style="color: #ffff;font-size: 1.8em;font-weight: 500;">{{index}}</div>
+                        <!-- <img style="height: 7vh;" src="{{indexwise_ranking_score_background_image}}"/> -->
+                    </div>
+                    <div class="col-4 upper_name_div">
+                     <p class="upper_animated_name">{{indexwise_ranking_name}}</p>
+        
+                    </div>
+                    <div class="col-2 profile_logo">
+                        <img src="{{index_ranking_profile}}" alt="profile_logo" height="100%" width="100%">
+                   </div>
+                    <div class="col-3 team_div">
+                        <p class="upper_animated_team">{{indexwise_ranking_team_name}}</p>
+                       </div>
+                       
+                       <div class="col-2 score_div">
+                        <p class="upper_animated_score">{{indexwise_ranking_weightage}}</p>
+           
+                       </div>
+                </div>
+            </mat-card>
+        </mat-card>
+       
+    </div>
+
+<div class="upper_five_cards">
+
+    <!-- <div class="upper-animated-card">
+        <mat-card class="upper_animated_card_move">
+            <div class="row">
+                <div class="col-1">
+                    <span class="upper_animated_hex1" ></span>
+    
+                </div>
+                <div class="col-6 name_div">
+                 <p class="upper_animated_name">Syed Mujtaba Hussein Kirmani</p>
+    
+                </div>
+                <div class="col-3 team_div">
+                    <p class="upper_animated_team">Black Panthers</p>
+       
+                   </div>
+                   <div class="col-2 score_div">
+                    <p class="upper_animated_score">45678</p>
+       
+                   </div>
+            </div>
+        </mat-card>
+    </div> -->
+<!------------------------------------------------ First Card  ---------------------------------------------------->
+
+
+<!------------------------------------------------ Fifth Card  ---------------------------------------------------->
+
+<div class="animated_card_div" *ngFor="let res of indexwise_ranking;let i=index" >
+    <mat-card class="animated_card" *ngIf="i<5">
+        <div class="row">
+            <div class="col-1 score_image_small" style="background:url({{indexwise_ranking_score_background_image}})">
+               <div >{{i+1}}</div>
+               
+                <!-- <img style="height: 5vh;" src="{{indexwise_ranking_score_background_image}}"/> -->
+               
+                
+
+            </div>
+            <div class="col-6 name_div d-flex align-items-center">
+             <p class="name">{{res.first_name}}</p>
+
+            </div>
+
+            <div class="col-3 team_div d-flex align-items-center">
+                <p class="team">{{res.team_name}}</p>
+   
+               </div>
+               <div class="col-2 score_div d-flex align-items-center">
+                <p class="score">{{res.weightage}}</p>
+   
+               </div>
+            <!-- <div class="col-3 team_div d-flex align-items-center">
+                <p class="team">{{player.Team_name}}</p>
+   
+               </div>
+               <div class="col-2 score_div d-flex align-items-center">
+                <p class="score">{{player.points}}</p>
+   
+               </div> -->
+        </div>
+        
+    </mat-card>
+</div>
+
+</div>
+

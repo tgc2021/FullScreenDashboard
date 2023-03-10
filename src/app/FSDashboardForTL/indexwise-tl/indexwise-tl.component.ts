@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewChild,ElementRef } from '@angular/core';
-import { FullscreenServiceService } from '../fullscreen-service.service';
+import { FullscreenServiceService } from '../../fullscreen-service.service';
 import {Location} from '@angular/common'
 import { ActivatedRoute } from '@angular/router';
 
-// import { fade, slide, listAnimation } from "@angular/animations";
 @Component({
-  selector: 'app-fullscreen-leaderboard',
-  templateUrl: './fullscreen-leaderboard.component.html',
-  styleUrls: ['./fullscreen-leaderboard.component.scss']
+  selector: 'app-indexwise-tl',
+  templateUrl: './indexwise-tl.component.html',
+  styleUrls: ['./indexwise-tl.component.scss']
 })
-
-export class FullscreenLeaderboardComponent implements OnInit {
+export class IndexwiseTLComponent implements OnInit {
   player: any;
   index: any=0;
   indexwise_response:any
@@ -97,7 +95,7 @@ if(this.apiid=='undefined'){
       this.index++;
     }
   },1350)
-  this.loadIndexWise()
+   this.loadIndexWiseForTL()
 
 }
 else if(this.apiid==1){
@@ -136,7 +134,7 @@ else if(this.apiid==1){
       this.index++;
     }
   },1350) 
-  this.loadIndexWiseForId2()
+   this.loadIndexWiseForId2TL()
 }
 else if(this.apiid==2){
   this.indexwise_title=this.indexwise.data.fs_details[2].label
@@ -175,7 +173,7 @@ else if(this.apiid==2){
     }
   },1350)
 
-  this.loadIndexWiseForId3()
+  this.loadIndexWiseForId3TL()
   
 }
 else if(this.apiid==3){
@@ -214,7 +212,7 @@ else if(this.apiid==3){
       this.index++;
     }
   },1350)
-  this.loadEmergingPlayer()
+   this.loadEmergingTL()
 }
    
   })
@@ -223,19 +221,19 @@ else if(this.apiid==3){
    
 }
 
-loadIndexWise(){
+loadIndexWiseForTL(){
   
   setInterval(()=>{
-    this.location.replaceState("indexwise_dashboard?id=1");
+    this.location.replaceState("indexwise_TL_dashboard?id=1");
     location.reload()
    
    },13500)  
 
 }
-loadIndexWiseForId2(){
+loadIndexWiseForId2TL(){
   
   setInterval(()=>{
-    this.location.replaceState("indexwise_dashboard?id=2");
+    this.location.replaceState("indexwise_TL_dashboard?id=2");
     location.reload()
    
    },13500)
@@ -244,10 +242,10 @@ loadIndexWiseForId2(){
 
 }
 
-loadIndexWiseForId3(){
+loadIndexWiseForId3TL(){
   
   setInterval(()=>{
-    this.location.replaceState("indexwise_dashboard?id=3");
+    this.location.replaceState("indexwise_TL_dashboard?id=3");
     location.reload()
    
    },13500)
@@ -259,9 +257,9 @@ loadIndexWiseForId3(){
 
 }
 
-loadEmergingPlayer(){
+loadEmergingTL(){
   setInterval(()=>{
-    this.location.replaceState("Emerging_player_dashboard");
+    this.location.replaceState("Emerging_TL_dashboard");
     location.reload()
    
    },13500)
@@ -271,5 +269,4 @@ loadEmergingPlayer(){
 
 
 }
-
 

@@ -239,57 +239,6 @@ color: #FFFFFF;
  
 }
 
-<<<<<<< HEAD
-  .upper_animated_score{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1vw;
-    margin-bottom: 0;
-    color: #FFFFFF;
-   
-  }
-
-  .animated_transparent_card{
-    padding: 0;
-    height: 40vh;
-    position: absolute;
-    width: 100vw;
-    overflow: hidden;
-    
-    animation: mymove 9s infinite ease-in-out;
-  }
-  
-  @keyframes mymove { 
-    0%   {
-      top: 9vh;
-      transition-delay: 1s;
-    
-    }
-    20%  {
-      top: 20vh;
-  
-      transition-delay: 1s;
-    
-    }
-    40%  {
-      top: 30vh;
-      transition-delay: 1s;
-    
-    }
-    60%  {top: 40vh;
-      transition-delay: 1s;
-    }
-    80%  {top: 52vh;
-      transition-delay: 1s;
-    
-    }
- 
-    to {
-      top:9vh;
-      transition-delay: 1s;
-    }
-=======
 .animated_transparent_card{
   
   
@@ -302,7 +251,6 @@ color: #FFFFFF;
   animation: mymove 7s infinite ease-in-out;
   // animation-direction: alternate;
 }
->>>>>>> ec07b38e4989f08ffccca1171f2c4bc78d0d075c
 
 
 @keyframes mymove { 
@@ -328,7 +276,7 @@ color: #FFFFFF;
     transition-delay: 1s;
   
   }
-  98%{
+  95%{
     top: 52vh;
     transition-delay: 1s;
   }

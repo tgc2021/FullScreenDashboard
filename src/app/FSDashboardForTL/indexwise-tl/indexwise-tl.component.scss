@@ -1,0 +1,311 @@
+.web_view{
+  // background-image: url(../../../src/assets/fullscreen_background.png);
+  width: 100vw;
+  height: 100vh;
+  background-size: 100% 100%;
+  // margin-top: 8vh;
+  background-position: center center;
+  background-attachment:fixed;
+  overflow: hidden;
+
+}
+
+.title{
+  height: 9vh;
+  width: 100vw;
+}
+
+.title_description{
+  height: 9vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: poppins;
+  font-size: 2vw;
+  color: #ffffff;
+}
+
+.animated_card{
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.12) 100%);
+  border: 1px solid #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+// height: 9vh;
+height: 14vh;
+display: grid;
+align-items: center;
+}
+
+.animated_card_div{
+  margin-top: 2vh;
+  
+}
+
+// .hex1{
+//     background: linear-gradient(180deg, #5BB260 0%, rgba(80, 255, 64, 0.81) 0.01%, #00973C 100%);
+
+// }
+.hex1::before {
+  content: "\2B22";
+  color: #5BB260;
+
+  position: absolute;
+  top: 0;
+  font-size: 6vh;
+}
+
+.name{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5vw;
+  margin-bottom: 0;
+  color: #FFFFFF;
+}
+
+.name_div{
+  display: flex;
+  align-items: center;
+}
+
+.team_div{
+  display: flex;
+  align-items: center;
+}
+.profile_logo{
+  img{ border: 1px solid #9A9A9A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    
+    width: 6vw;
+    height: 6vw;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 9vh;
+  animation: moveProfile 2s infinite ease-in;
+
+}
+
+.team{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.3vw;
+  margin-bottom: 0;
+  color: #FFFFFF;
+}
+
+.score_rankImage{
+  background-repeat: no-repeat;
+
+}
+.score_div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1vw;
+  margin-bottom: 0;
+  color: #FFFFFF;
+}
+
+
+.lower_mat_card{
+  background: rgba(0, 0, 0, 0.5);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+height: 33vh;
+  margin-top: 1vh;
+}
+
+.lower_rank{
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 1.2vw;
+
+/* identical to box height */
+
+text-align: center;
+
+color: #FFFFFF;
+}
+
+.lower_player_name{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2vw;
+  
+  /* identical to box height */
+      
+  color: #FFFFFF;
+}
+
+.lower_team_name{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1vw;
+  
+  /* identical to box height */
+      
+  color: #FFFFFF;
+}
+
+.lower_score{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1vw;
+  display:flex;
+  justify-content: center;
+  /* identical to box height */
+  color: #FFFFFF;
+}
+.score_image_big{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 11vh;
+  background-size: 100% 100% !important;
+}
+.score_image_small{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+  color: #ffff;
+  font-weight: 600;
+  font-size: 1.3em;
+  background-size: 100% 100% !important;
+}
+.upper_animated_card_move{
+  background: linear-gradient(var(--myvar));
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid #ffff;
+  border-radius: 10px;
+  position: absolute;
+  display: grid;
+  align-items: center;
+  z-index: 10;
+  width: 100%;
+  /* margin-top: 1vh; */
+
+  height: 18vh;
+}
+
+.upper_animated_hex1::before {
+  content: "\2B22";
+  color: #5BB260;
+
+  position: absolute;
+  top: 0;
+  font-size: 9vh;
+}
+
+.upper_animated_name{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5vw;
+  color: #FFFFFF;
+  margin-bottom: 0;
+}
+
+.upper_name_div{
+  display: flex;
+  align-items: center;
+  height: 11vh;
+}
+
+.upper_animated_team{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.3vw;
+  margin-bottom: 0;
+  color: #FFFFFF;
+}
+
+
+.upper_animated_score{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1vw;
+  margin-bottom: 0;
+  color: #FFFFFF;
+ 
+}
+
+.animated_transparent_card{
+  
+  
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0;
+  height: 18vh;
+  position: absolute;
+  width: 100vw;
+  overflow: hidden;
+  animation: mymove 7s infinite ease-in-out;
+  // animation-direction: alternate;
+}
+
+
+@keyframes mymove { 
+  0%   {
+    top: 10vh;
+    transition-delay: 1s;
+    
+  }
+  20%{
+    top: 24vh;
+    transition-delay: 1s;
+  
+  }
+  40%  {
+    top: 40vh;
+    transition-delay: 1s;
+  
+  }
+  60%  {top: 56vh;
+    transition-delay: 1s;
+  }
+  80%  {top:72vh;
+    transition-delay: 1s;
+  
+  }
+  95%{
+    top: 72vh;
+    transition-delay: 1s;
+  }
+  100%{
+    top: 10vh;
+    transition-delay: 1s;
+  }
+
+ 
+  
+
+
+}
+
+// @keyframes moveProfile  {
+
+//   0%{
+//     // transform: rotate(0deg);
+//   }
+//   to{
+//     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+//   }
+  
+  
+// }

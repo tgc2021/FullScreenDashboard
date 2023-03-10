@@ -1,6 +1,6 @@
 import { Component, OnInit ,ElementRef} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FullscreenServiceService } from '../fullscreen-service.service';
+import { FullscreenServiceService } from '../../fullscreen-service.service';
 import { Location } from '@angular/common';
 
 
