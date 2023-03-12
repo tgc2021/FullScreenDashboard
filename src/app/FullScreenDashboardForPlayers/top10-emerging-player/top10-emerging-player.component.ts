@@ -147,7 +147,7 @@ ngOnInit(): void {
      
       
     }, 3000);
-    this.loadOverallTL()
+     this.loadOverallTL()
 
     }
     
