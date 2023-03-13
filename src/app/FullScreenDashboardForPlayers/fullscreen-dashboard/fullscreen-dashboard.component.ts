@@ -87,6 +87,7 @@ localStorage.setItem('_gameID',this._gameID)
       _fs_type:"1"
     }
 
+    this.loadIndexWise()
     this.http.fullscreen_top_ten(body).subscribe((res) => {
 
       console.log(res);
@@ -242,8 +243,7 @@ localStorage.setItem('_gameID',this._gameID)
     this.profile=this.top5toppers[0].profile_logo
     this.team_name=this.top5toppers[0].team_name
 
-    this.loadIndexWise()
-
+  
     setInterval(()=>{
     //  this.counter=0
       console.log(this.counter);
@@ -275,9 +275,10 @@ localStorage.setItem('_gameID',this._gameID)
       }
     },5000)
     console.log(this.counter);
+    
 
     })
-
+   
   
   }
 

@@ -26,19 +26,11 @@ export class Top10EmergingPlayerComponent {
 
   
   constructor(public location:Location,public http:FullscreenServiceService,public router:ActivatedRoute,public element:ElementRef){
-   
-
   }
   
 
   
 ngOnInit(): void {
-
-  
-
- 
-
-
   this.windowlocation=window.location.href
     console.log(this.windowlocation);
 
