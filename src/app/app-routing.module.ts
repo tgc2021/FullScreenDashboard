@@ -22,7 +22,7 @@ const routes: Routes = [
 
   {path:'Overall_RM',component:OverallRMComponent},
   {path:'Emerging_RM_dashboard',component:EmergingRMComponent},
-  { path: 'indexwise_RM_dashboard', component:IndexWiseRMComponent},
+  { path:'indexwise_RM_dashboard', component:IndexWiseRMComponent},
 
 ];
 
