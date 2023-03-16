@@ -82,7 +82,8 @@ ngOnInit(): void {
      
       
     }, 3000);
-    this.loadIndexWiseForReturn();
+    // this.loadIndexWiseForReturn();
+    this.loadIndexwiseRM()
     }
 
     
@@ -125,15 +126,7 @@ loadEmergingTop10ForId3(){
 
 
 }
-loadIndexWiseForReturn(){
-  
-  setInterval(()=>{
-    this.location.replaceState(`fullscreen_dashboard?_gameID=${this._gameId}`);
-    location.reload()
-   
-   },36000)
 
-}
 
 
 

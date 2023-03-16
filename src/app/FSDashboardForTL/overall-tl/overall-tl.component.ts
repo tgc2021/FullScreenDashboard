@@ -82,8 +82,8 @@ ngOnInit(): void {
      
       
     }, 3000);
-    //  this.loadIndexWiseForTLReturn()
-    this.loadOverallRM();
+      this.loadIndexWiseForTLReturn()
+    // this.loadOverallRM();
     }
     // else if(this.apiid==1){
     //   this.themeDetails=res.data.fs_details[1]._fullscreen_themedetails;
@@ -167,15 +167,15 @@ loadOverallRM(){
 }
 
 
-// loadIndexWiseForTLReturn(){
+loadIndexWiseForTLReturn(){
   
-//   setInterval(()=>{
-//     this.location.replaceState("indexwise_TL_dashboard");
-//     location.reload()
+  setInterval(()=>{
+    this.location.replaceState("indexwise_TL_dashboard");
+    location.reload()
    
-//    },36000)
+   },36000)
 
-// }
+}
 
 
 
