@@ -260,6 +260,50 @@ color: #FFFFFF;
 }
 
 
+.animated_transparent_card_5{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0;
+  height: 18vh;
+  position: absolute;
+  width: 100vw;
+  overflow: hidden;
+  animation: mymoveFor5 7s infinite ease-in-out;
+
+}
+.animated_transparent_card_4{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0;
+  height: 18vh;
+  position: absolute;
+  width: 100vw;
+  overflow: hidden;
+  animation: mymoveFor4 6s ease-in-out;
+  animation-iteration-count: 1;
+
+}
+.animated_transparent_card_3{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0;
+  height: 18vh;
+  position: absolute;
+  width: 100vw;
+  overflow: hidden;
+  animation: mymoveFor3 4s  ease-in-out;
+  animation-iteration-count: 1;
+
+}
+.animated_transparent_card_2{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0;
+  height: 18vh;
+  position: absolute;
+  width: 100vw;
+  overflow: hidden;
+  animation: mymoveFor2 7s infinite ease-in-out;
+
+}
+
+
 @keyframes mymove { 
   0%   {
     top: 10vh;
@@ -295,6 +339,59 @@ color: #FFFFFF;
  
   
 
+
+}
+
+
+@keyframes mymoveFor3 { 
+  0%   {
+    top: 10vh;
+    transition-delay: 1s;
+    
+  }
+  35%{
+    top: 24vh;
+    transition-delay: 1s;
+  
+  }
+  70%  {
+    top: 40vh;
+    transition-delay: 1s;
+  
+  }
+  100%  {
+    top: 40vh;
+    transition-delay: 1s;
+  }
+
+}
+
+@keyframes mymoveFor4 { 
+  0%   {
+    top: 10vh;
+    transition-delay: 1s;
+    
+  }
+  25%{
+    top: 24vh;
+    transition-delay: 1s;
+  
+  }
+  50%  {
+    top: 40vh;
+    transition-delay: 1s;
+  
+  }
+
+  75%{
+    top: 58vh;
+    transition-delay: 1s;
+
+
+  }
+  100%  {top: 58vh;
+    transition-delay: 1s;
+  }
 
 }
 

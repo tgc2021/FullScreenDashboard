@@ -227,14 +227,14 @@ loadIndexWiseForTL(){
     this.location.replaceState("indexwise_TL_dashboard?id=1");
     location.reload()
 
-   },13500)  
+   },6750)  
 }
 loadIndexWiseForId2TL(){
   setInterval(()=>{
     this.location.replaceState("indexwise_TL_dashboard?id=2");
     location.reload()
    
-   },13500)
+   },6750)
 }
 loadIndexWiseForId3TL(){
   
@@ -242,7 +242,7 @@ loadIndexWiseForId3TL(){
     this.location.replaceState("indexwise_TL_dashboard?id=3");
     location.reload()
    
-   },13500)
+   },6750)
 
 }
 loadEmergingTL(){
@@ -251,7 +251,7 @@ loadEmergingTL(){
     this.location.replaceState("Overall_RM");
     location.reload()
    
-   },13500)
+   },6750)
   
 }
 

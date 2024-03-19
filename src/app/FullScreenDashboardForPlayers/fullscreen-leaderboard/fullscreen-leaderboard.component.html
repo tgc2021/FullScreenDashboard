@@ -7,8 +7,7 @@
             <mat-card class="upper_animated_card_move" style="background: linear-gradient('{{indexwise_move_card_gradient}}')">
                 <div class="row" >
                     <div class="col-1 score_image_big"  
-                    style="background:url({{indexwise_ranking_score_background_image}});
-                    "
+                    style="background:url({{indexwise_ranking_score_background_image}})"
                     >
                         <div style="color: #ffff;font-size: 1.8em;font-weight: 500;">{{index}}</div>
                         <!-- <img style="height: 7vh;" src="{{indexwise_ranking_score_background_image}}"/> -->
@@ -66,7 +65,7 @@
 <div class="animated_card_div" *ngFor="let res of indexwise_ranking;let i=index" >
     <mat-card class="animated_card" *ngIf="i<5">
         <div class="row">
-            <div class="col-1 score_image_small" style="background:url({{indexwise_ranking_score_background_image}})">
+            <div class="col-1 score_image_small" [style.background]="indexwise_ranking_score_background_image" >
                <div >{{i+1}}</div>
                
                 <!-- <img style="height: 5vh;" src="{{indexwise_ranking_score_background_image}}"/> -->
@@ -75,16 +74,16 @@
 
             </div>
             <div class="col-6 name_div d-flex align-items-center">
-             <p class="name">{{res.first_name}}</p>
+             <p class="name">{{res?.first_name}}</p>
 
             </div>
 
             <div class="col-3 team_div d-flex align-items-center">
-                <p class="team">{{res.team_name}}</p>
+                <p class="team">{{res?.team_name}}</p>
    
                </div>
                <div class="col-2 score_div d-flex align-items-center">
-                <p class="score">{{res.weightage}}</p>
+                <p class="score">{{res?.weightage}}</p>
    
                </div>
             <!-- <div class="col-3 team_div d-flex align-items-center">
@@ -108,15 +107,15 @@
             </div>
 
             <div class="col-6">
-                <p class="lower_player_name">{{indexwise_ranking[5].first_name}}</p> 
+                <p class="lower_player_name">{{indexwise_ranking[5]?.first_name}}</p> 
              </div>
 
              <div class="col-3">
-                <p class="lower_team_name">{{indexwise_ranking[5].team_name}}</p> 
+                <p class="lower_team_name">{{indexwise_ranking[5]?.team_name}}</p> 
              </div>
 
              <div class="col-2">
-                <p class="lower_score">{{indexwise_ranking[5].weightage}}</p> 
+                <p class="lower_score">{{indexwise_ranking[5]?.weightage}}</p> 
              </div>
         </div>
 
@@ -127,15 +126,15 @@
             </div>
 
             <div class="col-6">
-                <p class="lower_player_name">{{indexwise_ranking[6].first_name}}</p> 
+                <p class="lower_player_name">{{indexwise_ranking[6]?.first_name}}</p> 
              </div>
 
              <div class="col-3">
-                <p class="lower_team_name">{{indexwise_ranking[6].team_name}}</p> 
+                <p class="lower_team_name">{{indexwise_ranking[6]?.team_name}}</p> 
              </div>
 
              <div class="col-2">
-                <p class="lower_score">{{indexwise_ranking[6].weightage}}</p> 
+                <p class="lower_score">{{indexwise_ranking[6]?.weightage}}</p> 
              </div>
         </div>
 
@@ -145,15 +144,15 @@
             </div>
 
             <div class="col-6">
-                <p class="lower_player_name">{{indexwise_ranking[7].first_name}}</p> 
+                <p class="lower_player_name">{{indexwise_ranking[7]?.first_name}}</p> 
              </div>
 
              <div class="col-3">
-                <p class="lower_team_name">{{indexwise_ranking[7].team_name}}</p> 
+                <p class="lower_team_name">{{indexwise_ranking[7]?.team_name}}</p> 
              </div>
 
              <div class="col-2">
-                <p class="lower_score">{{indexwise_ranking[7].weightage}}</p> 
+                <p class="lower_score">{{indexwise_ranking[7]?.weightage}}</p> 
              </div>
         </div>
 
@@ -163,15 +162,15 @@
             </div>
 
             <div class="col-6">
-                <p class="lower_player_name">{{indexwise_ranking[8].first_name}}</p> 
+                <p class="lower_player_name">{{indexwise_ranking[8]?.first_name}}</p> 
              </div>
 
              <div class="col-3">
-                <p class="lower_team_name">{{indexwise_ranking[8].team_name}}</p> 
+                <p class="lower_team_name">{{indexwise_ranking[8]?.team_name}}</p> 
              </div>
 
              <div class="col-2">
-                <p class="lower_score">{{indexwise_ranking[8].weightage}}</p> 
+                <p class="lower_score">{{indexwise_ranking[8]?.weightage}}</p> 
              </div>
         </div>
 
@@ -182,15 +181,15 @@
             </div>
 
             <div class="col-6">
-                <p class="lower_player_name">{{indexwise_ranking[9].first_name}}</p> 
+                <p class="lower_player_name">{{indexwise_ranking[9]?.first_name}}</p> 
              </div>
 
              <div class="col-3">
-                <p class="lower_team_name">{{indexwise_ranking[9].team_name}}</p> 
+                <p class="lower_team_name">{{indexwise_ranking[9]?.team_name}}</p> 
              </div>
 
              <div class="col-2">
-                <p class="lower_score">{{indexwise_ranking[9].weightage}}</p> 
+                <p class="lower_score">{{indexwise_ranking[9]?.weightage}}</p> 
              </div>
         </div>
     </mat-card>

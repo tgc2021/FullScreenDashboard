@@ -9,9 +9,9 @@
       <div *ngFor="let res of top5toppers; let i=index">
         <mat-card class="top_5_leaderboard_second" [class.active]="i==counter" *ngIf="i<5">
           <div class="row card_detail">
-            <div class="col-2 rank">{{res.rankingtable_number}}</div>
-            <div class="col-8 name">{{res.first_name}}</div>
-            <div class="col-2 score">{{math.trunc(res.weightage)}}</div>
+            <div class="col-2 rank">{{res?.rankingtable_number}}</div>
+            <div class="col-8 name">{{res?.first_name}}</div>
+            <div class="col-2 score">{{math.trunc(res?.weightage)}}</div>
           </div>
         </mat-card>
       </div >
@@ -26,7 +26,7 @@
                 <div>
                   <img class="tile_6" src="{{tile6}}"/>
                   <div class="tile_6_name">{{title6_name_final}} </div>
-                  <div class="tile_6_score">{{math.trunc(top5toppers[5].weightage)}}</div>
+                  <div class="tile_6_score">{{top5toppers[5]?.weightage}}</div>
 
                 </div>
                 
@@ -42,7 +42,7 @@
                   <div>
                     <img class="tile_8" src="{{tile8}}"/>
                     <div class="tile_8_name">{{title8_name_final}}</div>
-                    <div class="tile_8_score">{{math.trunc(top5toppers[7].weightage)}}</div>
+                    <div class="tile_8_score">{{math.trunc(top5toppers[7]?.weightage)}}</div>
                   </div>
                 </div>
 
@@ -58,7 +58,7 @@
                 <div>
                   <img class="tile_9" src="{{tile9}}"/>
                   <div class="tile_9_name">{{title9_name_final}}</div>
-                  <div class="tile_9_score">{{math.trunc(top5toppers[8].weightage)}}</div>
+                  <div class="tile_9_score">{{math.trunc(top5toppers[8]?.weightage)}}</div>
                 </div>
               </div>
 
@@ -75,7 +75,7 @@
               <div>
                 <img class="tile_7" src="{{tile7}}"/>
                 <div class="tile_7_name">{{title7_name_final}}</div>
-                <div class="tile_7_score">{{math.trunc(top5toppers[6].weightage)}}</div>
+                <div class="tile_7_score">{{math.trunc(top5toppers[6]?.weightage)}}</div>
 
               </div>
   
@@ -95,7 +95,7 @@
               <div>
                 <img class="tile_10" src="{{tile10}}"/>
                 <div class="tile_10_name">{{title10_name_final}}</div>
-                <div class="tile_10_score">{{math.trunc(top5toppers[9].weightage)}}</div>
+                <div class="tile_10_score">{{math.trunc(top5toppers[9]?.weightage)}}</div>
               </div>
 
              </div>

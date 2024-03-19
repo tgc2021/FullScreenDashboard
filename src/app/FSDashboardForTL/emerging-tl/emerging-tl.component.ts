@@ -98,8 +98,6 @@ ngOnInit(): void {
       else {
         this.index=0
       }
-     
-     
       
     }, 3000);
     this.loadEmergingTop5TLForId2();
