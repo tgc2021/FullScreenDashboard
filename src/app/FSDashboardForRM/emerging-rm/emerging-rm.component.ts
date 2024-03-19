@@ -106,15 +106,15 @@ ngOnInit(): void {
     }
     
     else if(this.apiid==2){
-      this.themeDetails=res.data.fs_details[2]._fullscreen_themedetails;
-      this.label=res.data.fs_details[2].label;
-      console.log(this.label)
-    this.ranking_data=res.data.fs_details[2]._ranking_data;
+      this.themeDetails=res?.data?.fs_details[2]?._fullscreen_themedetails;
+      this.label=res?.data?.fs_details[2]?.label;
+      
+    this.ranking_data=res?.data?.fs_details[2]?._ranking_data;
     setInterval(() => {
       if(this.index>=0 && this.index<5){
         this.index++;
         
-        console.log(this.index)
+       
       }
       else {
         this.index=0

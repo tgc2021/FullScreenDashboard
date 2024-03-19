@@ -54,49 +54,49 @@ export class IndexWiseRMComponent implements OnInit {
       _fs_type:"3"
     }
     this.http.fullscreen_top_ten_rm_indexwise(body).subscribe((res) => {
-    console.log(res);
+    
     this.indexwise=res
-    this.indexwise_response=this.indexwise.data
+    this.indexwise_response=this.indexwise?.data
     // this.arrayLength=this.indexwise.data.fs_details[0]._ranking_data.length();
     // console.log(this.arrayLength);
     console.log(this.apiid);
     this.apiid=localStorage.getItem('id')
     console.log(this.apiid);
 
-    this.indexwise_move_card_gradient=this.indexwise.data.fs_details[0]._fullscreen_themedetails.bg_color;
+    this.indexwise_move_card_gradient=this.indexwise?.data?.fs_details[0]?._fullscreen_themedetails?.bg_color;
     this.element.nativeElement.style.setProperty('--myvar', `${this.indexwise_move_card_gradient}`)
 
 if(this.apiid=='undefined'){
 
-  this.indexwise_title=this.indexwise.data.fs_details[0].label
-  this.indexwise_background_image=this.indexwise.data.fs_details[0]._fullscreen_themedetails.background_image
-  this.indexwise_ranking=this.indexwise.data.fs_details[0]._ranking_data
-  this.arrayLength=this.indexwise_ranking.length;
-  console.log(this.indexwise_ranking.length);
-  this.indexwise_ranking_score_background_image=this.indexwise.data.fs_details[0]._fullscreen_themedetails.score_background_image
-  this.indexwise_ranking_name=this.indexwise.data.fs_details[0]._ranking_data[0].first_name
-  this.indexwise_ranking_team_name=this.indexwise.data.fs_details[0]._ranking_data[0].brand_name
-  this.indexwise_ranking_weightage=this.indexwise.data.fs_details[0]._ranking_data[0].rm_brand_weightage
-  this.index_ranking_profile=this.indexwise.data.fs_details[0]._ranking_data[0].profile_logo
+  this.indexwise_title=this.indexwise?.data?.fs_details[0]?.label
+  this.indexwise_background_image=this.indexwise?.data?.fs_details[0]?._fullscreen_themedetails?.background_image
+  this.indexwise_ranking=this.indexwise?.data?.fs_details[0]?._ranking_data
+  this.arrayLength=this.indexwise_ranking?.length;
+
+  this.indexwise_ranking_score_background_image=this.indexwise?.data?.fs_details[0]?._fullscreen_themedetails.score_background_image
+  this.indexwise_ranking_name=this.indexwise.data.fs_details[0]?._ranking_data[0]?.first_name
+  this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[0]?._ranking_data[0]?.brand_name
+  this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[0]?._ranking_data[0]?.rm_brand_weightage
+  this.index_ranking_profile=this.indexwise?.data?.fs_details[0]?._ranking_data[0]?.profile_logo
   this.index++
 
 
   setInterval(()=>{
    
     if(this.index>0 && this.index<6){   
-      this.indexwise_ranking_name=this.indexwise.data.fs_details[0]._ranking_data[this.index].first_name
-      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[0]._ranking_data[this.index].brand_name
-      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[0]._ranking_data[this.index].rm_brand_weightage
-      this.index_ranking_profile=this.indexwise.data.fs_details[0]._ranking_data[this.index].profile_logo
+      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[0]?._ranking_data[this.index]?.first_name
+      this.indexwise_ranking_team_name=this.indexwise?.data.fs_details[0]?._ranking_data[this.index]?.brand_name
+      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[0]?._ranking_data[this.index]?.rm_brand_weightage
+      this.index_ranking_profile=this.indexwise?.data?.fs_details[0]?._ranking_data[this.index]?.profile_logo
       this.index++;
       
     }
     if(this.index==6){
       this.index=0
-      this.indexwise_ranking_name=this.indexwise.data.fs_details[0]._ranking_data[0].first_name
-      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[0]._ranking_data[0].brand_name
-      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[0]._ranking_data[0].rm_brand_weightage
-      this.index_ranking_profile=this.indexwise.data.fs_details[0]._ranking_data[this.index].profile_logo
+      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[0]?._ranking_data[0]?.first_name
+      this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[0]?._ranking_data[0]?.brand_name
+      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[0]?._ranking_data[0]?.rm_brand_weightage
+      this.index_ranking_profile=this.indexwise.data?.fs_details[0]?._ranking_data[this.index]?.profile_logo
       this.index++;
     }
   },1350)
@@ -104,15 +104,15 @@ if(this.apiid=='undefined'){
 
 }
 else if(this.apiid==1){
-  this.indexwise_title=this.indexwise.data.fs_details[1].label
-  this.indexwise_background_image=this.indexwise.data.fs_details[1]._fullscreen_themedetails.background_image
-  this.indexwise_ranking=this.indexwise.data.fs_details[1]._ranking_data
-  this.arrayLength=this.indexwise_ranking.length;
-  this.indexwise_ranking_score_background_image=this.indexwise.data.fs_details[1]._fullscreen_themedetails.score_background_image
-  this.indexwise_ranking_name=this.indexwise.data.fs_details[1]._ranking_data[0].first_name
-  this.indexwise_ranking_team_name=this.indexwise.data.fs_details[1]._ranking_data[0].brand_name
-  this.indexwise_ranking_weightage=this.indexwise.data.fs_details[1]._ranking_data[0].rm_brand_weightage
-  this.index_ranking_profile=this.indexwise.data.fs_details[1]._ranking_data[0].profile_logo
+  this.indexwise_title=this.indexwise?.data?.fs_details[1]?.label
+  this.indexwise_background_image=this.indexwise?.data?.fs_details[1]?._fullscreen_themedetails?.background_image
+  this.indexwise_ranking=this.indexwise?.data?.fs_details[1]?._ranking_data
+  this.arrayLength=this.indexwise_ranking?.length;
+  this.indexwise_ranking_score_background_image=this.indexwise?.data?.fs_details[1]?._fullscreen_themedetails?.score_background_image
+  this.indexwise_ranking_name=this.indexwise.data.fs_details[1]?._ranking_data[0]?.first_name
+  this.indexwise_ranking_team_name=this.indexwise?.data.fs_details[1]?._ranking_data[0]?.brand_name
+  this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.rm_brand_weightage
+  this.index_ranking_profile=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.profile_logo
   this.index++
 
 
@@ -120,18 +120,18 @@ else if(this.apiid==1){
    
     if(this.index>0 && this.index<6){
      
-      this.indexwise_ranking_name=this.indexwise.data.fs_details[1]._ranking_data[this.index].first_name
-      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[1]._ranking_data[this.index].brand_name
-      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[1]._ranking_data[this.index].rm_brand_weightage
-      this.index_ranking_profile=this.indexwise.data.fs_details[1]._ranking_data[this.index].profile_logo
+      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.first_name
+      this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.brand_name
+      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.rm_brand_weightage
+      this.index_ranking_profile=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.profile_logo
       this.index++;
     }
     if(this.index==6){
       this.index=0;
-      this.indexwise_ranking_name=this.indexwise.data.fs_details[1]._ranking_data[0].first_name
-      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[1]._ranking_data[0].brand_name
-      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[1]._ranking_data[0].rm_brand_weightage
-      this.index_ranking_profile=this.indexwise.data.fs_details[1]._ranking_data[this.index].profile_logo
+      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.first_name
+      this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.brand_name
+      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.rm_brand_weightage
+      this.index_ranking_profile=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.profile_logo
       this.index++;
     }
   },1350) 
@@ -143,10 +143,10 @@ else if(this.apiid==2){
   this.indexwise_ranking=this.indexwise.data.fs_details[2]._ranking_data
   this.arrayLength=this.indexwise_ranking.length;
   this.indexwise_ranking_score_background_image=this.indexwise.data.fs_details[2]._fullscreen_themedetails.score_background_image
-  this.indexwise_ranking_name=this.indexwise.data.fs_details[2]._ranking_data[0].first_name
-  this.indexwise_ranking_team_name=this.indexwise.data.fs_details[2]._ranking_data[0].brand_name
-  this.indexwise_ranking_weightage=this.indexwise.data.fs_details[2]._ranking_data[0].rm_brand_weightage
-  this.index_ranking_profile=this.indexwise.data.fs_details[2]._ranking_data[0].profile_logo
+  this.indexwise_ranking_name=this.indexwise?.data?.fs_details[2]?._ranking_data[0]?.first_name
+  this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[2]?._ranking_data[0]?.brand_name
+  this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[2]?._ranking_data[0]?.rm_brand_weightage
+  this.index_ranking_profile=this.indexwise?.data?.fs_details[2]?._ranking_data[0]?.profile_logo
   this.index++
 
 
@@ -154,10 +154,10 @@ else if(this.apiid==2){
    
     if(this.index>0 && this.index<6){
      
-      this.indexwise_ranking_name=this.indexwise.data.fs_details[2]._ranking_data[this.index].first_name
-      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[2]._ranking_data[this.index].brand_name
-      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[2]._ranking_data[this.index].rm_brand_weightage
-      this.index_ranking_profile=this.indexwise.data.fs_details[2]._ranking_data[this.index].profile_logo
+      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.first_name
+      this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.brand_name
+      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.rm_brand_weightage
+      this.index_ranking_profile=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.profile_logo
       this.index++;
      
    
@@ -165,10 +165,10 @@ else if(this.apiid==2){
     }
     if(this.index==6){
       this.index=0
-      this.indexwise_ranking_name=this.indexwise.data.fs_details[2]._ranking_data[0].first_name
-      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[2]._ranking_data[0].brand_name
-      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[2]._ranking_data[0].rm_brand_weightage
-      this.index_ranking_profile=this.indexwise.data.fs_details[2]._ranking_data[this.index].profile_logo
+      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[2]?._ranking_data[0]?.first_name
+      this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[2]?._ranking_data[0]?.brand_name
+      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[2]?._ranking_data[0]?.rm_brand_weightage
+      this.index_ranking_profile=this.indexwise.data?.fs_details[2]?._ranking_data[this.index]?.profile_logo
       this.index++;
     }
   },1350)
@@ -177,17 +177,17 @@ else if(this.apiid==2){
   
 }
 else if(this.apiid==3){
-  this.indexwise_title=this.indexwise.data.fs_details[3].label
-  this.indexwise_background_image=this.indexwise.data.fs_details[3]._fullscreen_themedetails.background_image
-  this.indexwise_ranking=this.indexwise.data.fs_details[3]._ranking_data
-  this.arrayLength=this.indexwise_ranking.length;
-  this.indexwise_ranking_score_background_image=this.indexwise.data.fs_details[3]._fullscreen_themedetails.score_background_image
+  this.indexwise_title=this.indexwise?.data?.fs_details[3]?.label
+  this.indexwise_background_image=this.indexwise?.data?.fs_details[3]?._fullscreen_themedetails?.background_image
+  this.indexwise_ranking=this.indexwise?.data?.fs_details[3]?._ranking_data
+  this.arrayLength=this.indexwise_ranking?.length;
+  this.indexwise_ranking_score_background_image=this.indexwise?.data?.fs_details[3]?._fullscreen_themedetails?.score_background_image
   
   
-  this.indexwise_ranking_name=this.indexwise.data.fs_details[3]._ranking_data[0].first_name
-  this.indexwise_ranking_team_name=this.indexwise.data.fs_details[3]._ranking_data[0].brand_name
-  this.indexwise_ranking_weightage=this.indexwise.data.fs_details[3]._ranking_data[0].rm_brand_weightage
-  this.index_ranking_profile=this.indexwise.data.fs_details[3]._ranking_data[0].profile_logo
+  this.indexwise_ranking_name=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.first_name
+  this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.brand_name
+  this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.rm_brand_weightage
+  this.index_ranking_profile=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.profile_logo
   this.index++
 
 

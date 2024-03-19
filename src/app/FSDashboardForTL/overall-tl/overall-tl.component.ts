@@ -61,19 +61,19 @@ ngOnInit(): void {
     console.log(res);
     this.apiid=localStorage.getItem('id');
     console.log(this.apiid);
-    this.points_color=res.data.fs_details[0]._fullscreen_themedetails.bg_color
+    this.points_color=res?.data?.fs_details[0]?._fullscreen_themedetails?.bg_color
     this.element.nativeElement.style.setProperty('--myvar', this.points_color)
     if(this.apiid==='undefined'){
-      this.themeDetails=res.data.fs_details[0]._fullscreen_themedetails;
+      this.themeDetails=res?.data?.fs_details[0]?._fullscreen_themedetails;
     
 
-      this.label=res.data.fs_details[0].label;
-    this.ranking_data=res.data.fs_details[0]._ranking_data;
+      this.label=res?.data?.fs_details[0]?.label;
+    this.ranking_data=res?.data?.fs_details[0]?._ranking_data;
     setInterval(() => {
       if(this.index>=0 && this.index<5){
         this.index++;
         
-        console.log(this.index)
+       
       }
       else {
         this.index=0
