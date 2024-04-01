@@ -23,6 +23,8 @@ export class EmergingTLComponent implements OnInit {
   apiid: any;
   _gameId: any;
   points_color: any;
+  tlLeaderBoardData: any;
+  tlLeaderBoardLength: any;
 
   
   constructor(public location:Location,public http:FullscreenServiceService,public router:ActivatedRoute,public element:ElementRef){
@@ -61,14 +63,14 @@ ngOnInit(): void {
     console.log(res);
     this.apiid=localStorage.getItem('id');
     console.log(this.apiid);
-    this.points_color=res.data.fs_details[0]._fullscreen_themedetails.bg_color
+    this.points_color=res?.data?.fs_details[0]?._fullscreen_themedetails?.bg_color
     this.element.nativeElement.style.setProperty('--myvar', this.points_color)
     if(this.apiid==='undefined'){
-      this.themeDetails=res.data.fs_details[0]._fullscreen_themedetails;
+      this.themeDetails=res?.data?.fs_details[0]?._fullscreen_themedetails;
     
 
-      this.label=res.data.fs_details[0].label;
-    this.ranking_data=res.data.fs_details[0]._ranking_data;
+      this.label=res?.data?.fs_details[0]?.label;
+    this.ranking_data=res?.data?.fs_details[0]?._ranking_data;
     setInterval(() => {
       if(this.index>=0 && this.index<5){
         this.index++;
@@ -85,10 +87,10 @@ ngOnInit(): void {
     this.loadEmergingTLTop()
     }
     else if(this.apiid==1){
-      this.themeDetails=res.data.fs_details[1]._fullscreen_themedetails;
-      this.label=res.data.fs_details[1].label;
-      console.log(this.label)
-    this.ranking_data=res.data.fs_details[1]._ranking_data;
+      this.themeDetails=res?.data?.fs_details[1]?._fullscreen_themedetails;
+      this.label=res?.data?.fs_details[1]?.label;
+     
+    this.ranking_data=res?.data?.fs_details[1]?._ranking_data;
       setInterval(() => {
       if(this.index>=0 && this.index<5){
         this.index++;
@@ -104,10 +106,10 @@ ngOnInit(): void {
     }
     
     else if(this.apiid==2){
-      this.themeDetails=res.data.fs_details[2]._fullscreen_themedetails;
-      this.label=res.data.fs_details[2].label;
+      this.themeDetails=res.data.fs_details[2]?._fullscreen_themedetails;
+      this.label=res?.data?.fs_details[2]?.label;
       console.log(this.label)
-    this.ranking_data=res.data.fs_details[2]._ranking_data;
+    this.ranking_data=res?.data?.fs_details[2]?._ranking_data;
     setInterval(() => {
       if(this.index>=0 && this.index<5){
         this.index++;
@@ -124,10 +126,10 @@ ngOnInit(): void {
     this.loadEmergingTop10TLForId3();
     }
     else if(this.apiid==3){
-      this.themeDetails=res.data.fs_details[3]._fullscreen_themedetails;
-      this.label=res.data.fs_details[3].label;
-      console.log(this.label)
-    this.ranking_data=res.data.fs_details[3]._ranking_data;
+      this.themeDetails=res?.data?.fs_details[3]?._fullscreen_themedetails;
+      this.label=res?.data?.fs_details[3]?.label;
+  
+    this.ranking_data=res.data.fs_details[3]?._ranking_data;
     setInterval(() => {
       if(this.index>=0 && this.index<5){
         this.index++;
@@ -142,6 +144,9 @@ ngOnInit(): void {
       
     }, 3000);
     this.loadOverallRM()
+    console.log('RM');
+    
+   
 
     }
     
@@ -181,19 +186,50 @@ loadEmergingTop10TLForId3(){
     this.location.replaceState("Emerging_TL_dashboard?id=3");
     location.reload()
    
-   },36000)
-
-
-}
-loadOverallRM(){
-  
-  setInterval(()=>{
-    this.location.replaceState("Overall_RM");
-    location.reload()
    
    },36000)
 
+
 }
+loadOverallRM() {
+  let body = {
+      _game: this._gameId,
+      _fs_type: "2"
+  };
+
+  this.http.fullscreen_top_ten_rm_overall(body).subscribe((res) => {
+      this.tlLeaderBoardData = res;
+      this.tlLeaderBoardLength = this.tlLeaderBoardData?.data?.fs_details[0]?._ranking_data?.length;
+      console.log("Initial tlLeaderBoardLength:", this.tlLeaderBoardLength);
+  });
+
+  const intervalId = setInterval(() => {
+      console.log("Inside setInterval");
+      console.log("tlLeaderBoardLength:", this.tlLeaderBoardLength);
+
+      if (this.tlLeaderBoardLength < 5) {
+          this.location.replaceState(`fullscreen_dashboard?_gameID=${this._gameId}`);
+      } else {
+          this.location.replaceState("Overall_RM");
+      }
+      
+      location.reload();
+  }, 36000);
+
+  // Error handling
+  setInterval(() => {
+      if (!this.tlLeaderBoardLength) {
+          console.error("tlLeaderBoardLength is undefined or null");
+      }
+  }, 10000); // Check every 10 seconds
+
+  // Additional logging
+  console.log("loadOverallRM function executed");
+
+  // Debugging: Check if setInterval is being called
+  console.log("Interval ID:", intervalId);
+}
+
 
 
 

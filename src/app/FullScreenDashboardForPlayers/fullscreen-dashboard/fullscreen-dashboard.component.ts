@@ -53,9 +53,11 @@ export class FullscreenDashboardComponent implements OnInit {
   title10_name_final:any
   location:any
   math = Math;
+  indexWisePlayer:any;
 
   theme_color:any
-  _gameID:any
+  _gameID:any;
+  indexWisePlayerlength:any
   constructor(public http:FullscreenServiceService, public element: ElementRef, private route: ActivatedRoute,public _location:Location) { }
 
   ngOnInit(): void {
@@ -287,8 +289,11 @@ localStorage.setItem('_gameID',this._gameID)
   
 
   loadIndexWise(){
+    let body={"_game":this._gameID,"_fs_type":"3"}
+   
   
     setInterval(()=>{
+    
       this._location.replaceState("indexwise_dashboard");
       location.reload()
      

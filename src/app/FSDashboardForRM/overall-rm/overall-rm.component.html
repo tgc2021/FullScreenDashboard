@@ -1,4 +1,4 @@
-<div class="main-div" style="background: url({{this.themeDetails.big_card_image}});">
+<div class="main-div" style="background: url({{this.themeDetails?.big_card_image}});">
     <div class="Top_ten_title">
         {{label}}
         
@@ -16,17 +16,17 @@
                             {{i+1|ordinals}} Place
                         </div>
                         <div class="profile_image">
-                            <img src="{{Player.profile_logo}}" alt="profile_image" height="100%" width="100%">
+                            <img src="{{Player?.profile_logo}}" alt="profile_image" height="100%" width="100%">
                         </div>
                         <div class="profile_name">
-                            {{Player.first_name}}
+                            {{Player?.first_name}}
                         </div>
                         <div class="profile_team_name">
-                            {{Player.team_name}}
+                            {{Player?.team_name}}
                         </div>
                         <div class="profile_points">
-                            <div class="fair_playPoints">{{Player.weightage}}</div>
-                            <div class="text_fair_play_points">{{Player.game_element}}</div>
+                            <div class="fair_playPoints">{{Player?.weightage}}</div>
+                            <div class="text_fair_play_points">{{Player?.game_element}}</div>
                         </div>
             
                         <!-- <div class="growth_percentage" style="margin-bottom: 5%;">

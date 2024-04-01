@@ -21,8 +21,10 @@ export class Top10EmergingPlayerComponent {
   id: any;
   gameid: any;
   apiid: any;
+  tlLeaderBoardData:any
   _gameId: any;
   points_color: any;
+  tlLeaderBoardLength:any;
 
   
   constructor(public location:Location,public http:FullscreenServiceService,public router:ActivatedRoute,public element:ElementRef){
@@ -54,17 +56,17 @@ ngOnInit(): void {
     }
     
   this.http.fullscreen_top_ten_Emerging(body).subscribe((res:any)=>{
-    console.log(res);
+  
     this.apiid=localStorage.getItem('id');
-    console.log(this.apiid);
-    this.points_color=res.data.fs_details[0]._fullscreen_themedetails.bg_color
-    this.element.nativeElement.style.setProperty('--myvar', this.points_color)
+
+    this.points_color=res.data?.fs_details[0]?._fullscreen_themedetails?.bg_color
+    this.element.nativeElement?.style.setProperty('--myvar', this.points_color)
     if(this.apiid==='undefined'){
-      this.themeDetails=res.data.fs_details[0]._fullscreen_themedetails;
+      this.themeDetails=res?.data?.fs_details[0]?._fullscreen_themedetails;
     
 
-      this.label=res.data.fs_details[0].label;
-    this.ranking_data=res.data.fs_details[0]._ranking_data;
+      this.label=res?.data?.fs_details[0]?.label;
+    this.ranking_data=res?.data?.fs_details[0]?._ranking_data;
     setInterval(() => {
       if(this.index>=0 && this.index<5){
         this.index++;
@@ -81,10 +83,10 @@ ngOnInit(): void {
     this.loadEmergingTop10()
     }
     else if(this.apiid==1){
-      this.themeDetails=res.data.fs_details[1]._fullscreen_themedetails;
-      this.label=res.data.fs_details[1].label;
-      console.log(this.label)
-    this.ranking_data=res.data.fs_details[1]._ranking_data;
+      this.themeDetails=res?.data?.fs_details[1]?._fullscreen_themedetails;
+      this.label=res?.data?.fs_details[1]?.label;
+   
+    this.ranking_data=res?.data?.fs_details[1]?._ranking_data;
       setInterval(() => {
       if(this.index>=0 && this.index<5){
         this.index++;
@@ -102,15 +104,15 @@ ngOnInit(): void {
     }
     
     else if(this.apiid==2){
-      this.themeDetails=res.data.fs_details[2]._fullscreen_themedetails;
-      this.label=res.data.fs_details[2].label;
-      console.log(this.label)
-    this.ranking_data=res.data.fs_details[2]._ranking_data;
+      this.themeDetails=res?.data?.fs_details[2]?._fullscreen_themedetails;
+      this.label=res?.data?.fs_details[2]?.label;
+     
+    this.ranking_data=res?.data?.fs_details[2]?._ranking_data;
     setInterval(() => {
       if(this.index>=0 && this.index<5){
         this.index++;
         
-        console.log(this.index)
+       
       }
       else {
         this.index=0
@@ -122,15 +124,15 @@ ngOnInit(): void {
      this.loadEmergingTop10ForId3()
     }
     else if(this.apiid==3){
-      this.themeDetails=res.data.fs_details[3]._fullscreen_themedetails;
-      this.label=res.data.fs_details[3].label;
-      console.log(this.label)
-    this.ranking_data=res.data.fs_details[3]._ranking_data;
+      this.themeDetails=res?.data?.fs_details[3]?._fullscreen_themedetails;
+      this.label=res?.data?.fs_details[3]?.label;
+      
+    this.ranking_data=res?.data?.fs_details[3]?._ranking_data;
     setInterval(() => {
       if(this.index>=0 && this.index<5){
         this.index++;
         
-        console.log(this.index)
+        
       }
       else  {
         this.index=0
@@ -153,6 +155,7 @@ ngOnInit(): void {
 
 
 loadEmergingTop10(){
+
   
   setInterval(()=>{
     this.location.replaceState(`Emerging_player_dashboard?id=1`);
@@ -184,9 +187,22 @@ loadEmergingTop10ForId3(){
 
 }
 loadOverallTL(){
+  let body={_fs_type: "2",
+    _game: this._gameId}
+  this.http.fullscreen_top_ten_tl_overall(body).subscribe((res)=>{
+    this.tlLeaderBoardData=res;
+    this.tlLeaderBoardLength=this.tlLeaderBoardData?.data?.fs_details[0]?._ranking_data?.length;
+    console.log(this.tlLeaderBoardLength);
+  })
   
   setInterval(()=>{
-    this.location.replaceState('Overall_TL');
+    if(this.tlLeaderBoardLength<5){
+      this.location.replaceState(`fullscreen_dashboard?_gameID=${this._gameId}`);
+  }else
+    {
+      this.location.replaceState('Overall_TL');
+     
+    }
     location.reload()
    
    },36000)

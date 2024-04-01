@@ -198,10 +198,10 @@ else if(this.apiid==3){
   this.indexwise_ranking_score_background_image=this.indexwise?.data?.fs_details[3]?._fullscreen_themedetails?.score_background_image
   
   
-  this.indexwise_ranking_name=this.indexwise.data.fs_details[3]._ranking_data[0].first_name
-  this.indexwise_ranking_team_name=this.indexwise.data.fs_details[3]._ranking_data[0].team_name
-  this.indexwise_ranking_weightage=this.indexwise.data.fs_details[3]._ranking_data[0].weightage
-  this.index_ranking_profile=this.indexwise.data.fs_details[3]._ranking_data[0].profile_logo
+  this.indexwise_ranking_name=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.first_name
+  this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.team_name
+  this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.weightage
+  this.index_ranking_profile=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.profile_logo
   this.index++
 
 
@@ -209,10 +209,10 @@ else if(this.apiid==3){
    
     if(this.index>0 && this.index<6){
      
-      this.indexwise_ranking_name=this.indexwise.data.fs_details[3]._ranking_data[this.index].first_name
-      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[3]._ranking_data[this.index].team_name
-      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[3]._ranking_data[this.index].weightage
-      this.index_ranking_profile=this.indexwise.data.fs_details[3]._ranking_data[this.index].profile_logo
+      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.first_name
+      this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.team_name
+      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.weightage
+      this.index_ranking_profile=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.profile_logo
       this.index++;
      
    
@@ -220,10 +220,10 @@ else if(this.apiid==3){
     }
     if(this.index==6){
       this.index=0
-      this.indexwise_ranking_name=this.indexwise.data.fs_details[3]._ranking_data[0].first_name
-      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[3]._ranking_data[0].team_name
-      this.indexwise_ranking_weightage=this.indexwise.data.fs_details[3]._ranking_data[0].weightage
-      this.index_ranking_profile=this.indexwise.data.fs_details[3]._ranking_data[this.index].profile_logo
+      this.indexwise_ranking_name=this?.indexwise?.data?.fs_details[3]?._ranking_data[0]?.first_name
+      this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.team_name
+      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.weightage
+      this.index_ranking_profile=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.profile_logo
       this.index++;
     }
   },1350)
