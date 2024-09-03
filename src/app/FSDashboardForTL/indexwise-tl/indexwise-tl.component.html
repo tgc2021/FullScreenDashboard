@@ -3,12 +3,11 @@
         <h5 class="title_description">{{indexwise_title}}</h5>
     </div>
     <div class="upper-animated-card">
-        <mat-card class="animated_transparent_card">
+        <mat-card  [ngClass]="{'animated_transparent_card':(indexwiseLength)>=5,'animated_transparent_card_4':(indexwiseLength)==4 ,'animated_transparent_card_3':(indexwiseLength)==3,'animated_transparent_card_2':(indexwiseLength)==2}">
             <mat-card class="upper_animated_card_move" style="background: linear-gradient('{{indexwise_move_card_gradient}}')">
                 <div class="row" style="display: flex;align-items: center;">
                     <div class="col-1 score_image_big"  
-                    style="background:url({{indexwise_ranking_score_background_image}});
-                    "
+                    [style.background]="indexwise_ranking_score_background_image"
                     >
                         <div style="color: #ffff;font-size: 1.8em;font-weight: 500;">{{index}}</div>
                         <!-- <img style="height: 7vh;" src="{{indexwise_ranking_score_background_image}}"/> -->

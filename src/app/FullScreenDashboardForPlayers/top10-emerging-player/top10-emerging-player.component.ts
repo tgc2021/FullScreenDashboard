@@ -196,13 +196,13 @@ loadOverallTL(){
   })
   
   setInterval(()=>{
-    if(this.tlLeaderBoardLength<5){
-      this.location.replaceState(`fullscreen_dashboard?_gameID=${this._gameId}`);
-  }else
-    {
+  //   if(this.tlLeaderBoardLength<5){
+  //     this.location.replaceState(`fullscreen_dashboard?_gameID=${this._gameId}`);
+  // }else
+  //   {
       this.location.replaceState('Overall_TL');
      
-    }
+    // }
     location.reload()
    
    },36000)

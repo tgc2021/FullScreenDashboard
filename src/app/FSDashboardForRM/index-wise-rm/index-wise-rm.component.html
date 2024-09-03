@@ -2,8 +2,8 @@
     <div class="title">
         <h5 class="title_description">{{indexwise_title}}</h5>
     </div>
-    <div class="upper-animated-card">
-        <mat-card  [ngClass]="{'animated_transparent_card':(arrayLength)==5,'animated_transparent_card_4':(arrayLength)==4 ,'animated_transparent_card_3':(arrayLength)==3,'animated_transparent_card_2':(arrayLength)==2}">
+    <div class="upper-animated-card" [style.display]="arrayLength==1?'none':''" >
+        <mat-card  [ngClass]="{'animated_transparent_card':(arrayLength)>=5,'animated_transparent_card_4':(arrayLength)==4 ,'animated_transparent_card_3':(arrayLength)==3,'animated_transparent_card_2':(arrayLength)==2}">
             <mat-card class="upper_animated_card_move" 
             
             

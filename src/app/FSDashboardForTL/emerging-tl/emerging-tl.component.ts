@@ -59,7 +59,7 @@ ngOnInit(): void {
       _fs_type:"4"
     }
     
-  this.http.fullscreen_top_ten_Emerging(body).subscribe((res:any)=>{
+  this.http.fullscreen_top_ten_tl_indexwise(body).subscribe((res:any)=>{
     console.log(res);
     this.apiid=localStorage.getItem('id');
     console.log(this.apiid);

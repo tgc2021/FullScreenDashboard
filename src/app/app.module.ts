@@ -16,8 +16,6 @@ import { EmergingTLComponent } from './FSDashboardForTL/emerging-tl/emerging-tl.
 import { OverallRMComponent } from './FSDashboardForRM/overall-rm/overall-rm.component';
 import { IndexWiseRMComponent } from './FSDashboardForRM/index-wise-rm/index-wise-rm.component';
 import { EmergingRMComponent } from './FSDashboardForRM/emerging-rm/emerging-rm.component';
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +29,6 @@ import { EmergingRMComponent } from './FSDashboardForRM/emerging-rm/emerging-rm.
     OverallRMComponent,
     IndexWiseRMComponent,
     EmergingRMComponent,
-  
   ],
   imports: [
     BrowserModule,

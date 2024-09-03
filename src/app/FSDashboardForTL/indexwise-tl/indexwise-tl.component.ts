@@ -24,6 +24,7 @@ export class IndexwiseTLComponent implements OnInit {
   windowlocation:any
   url:any
   id:any
+  indexwiseLength:any;
   apiid:any
   gameid: any;
   index_ranking_profile: any;
@@ -51,12 +52,14 @@ export class IndexwiseTLComponent implements OnInit {
   
     let body={
       _game:this._gameId,
-      _fs_type:"3"
+      _fs_type:"4"
     }
     this.http.fullscreen_top_ten_tl_indexwise(body).subscribe((res) => {
     console.log(res);
-    this.indexwise=res
-    this.indexwise_response=this.indexwise?.data
+    this.indexwise=res;
+    this.indexwise_response=this.indexwise?.data;
+    this.indexwiseLength=this.indexwise?.data?.fs_details[0]?._ranking_data?.length;
+    console.log('indexWiseLength',this.indexwiseLength)
     
     this.apiid=localStorage.getItem('id')
     
@@ -78,7 +81,9 @@ if(this.apiid=='undefined'){
 
 
   setInterval(()=>{
-   
+    
+   if(this.indexwise_response?.fs_details[0]?._ranking_data.length>=5 ){
+    
     if(this.index>0 && this.index<6){   
       this.indexwise_ranking_name=this.indexwise?.data?.fs_details[0]?._ranking_data[this.index]?.first_name
       this.indexwise_ranking_team_name=this.indexwise.data.fs_details[0]?._ranking_data[this.index]?.team_name
@@ -87,6 +92,30 @@ if(this.apiid=='undefined'){
       this.index++;
     }
     if(this.index==6){
+    //  this.index=0
+      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[0]?._ranking_data[0]?.first_name
+      this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[0]?._ranking_data[0]?.team_name
+      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[0]?._ranking_data[0]?.team_weightage
+      this.index_ranking_profile=this.indexwise?.data?.fs_details[0]?._ranking_data[this.index]?.profile_logo
+      this.index++;
+    }
+   }
+
+   else {
+    console.log(this.indexwise_response?.fs_details[0]?._ranking_data.length);
+    
+    if(this.index>0 && this.index<4){   
+      console.log(this.index);
+      
+      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[0]?._ranking_data[this.index]?.first_name
+      this.indexwise_ranking_team_name=this.indexwise.data.fs_details[0]?._ranking_data[this.index]?.team_name
+      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[0]?._ranking_data[this.index]?.team_weightage
+      this.index_ranking_profile=this.indexwise?.data?.fs_details[0]?._ranking_data[this.index]?.profile_logo
+      this.index++;
+    }
+    if(this.index==4){
+      console.log(this.index);
+
       this.index=0
       this.indexwise_ranking_name=this.indexwise?.data?.fs_details[0]?._ranking_data[0]?.first_name
       this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[0]?._ranking_data[0]?.team_name
@@ -94,6 +123,8 @@ if(this.apiid=='undefined'){
       this.index_ranking_profile=this.indexwise?.data?.fs_details[0]?._ranking_data[this.index]?.profile_logo
       this.index++;
     }
+   }
+   
   },1350)
    this.loadIndexWiseForTL()
 
@@ -113,25 +144,50 @@ else if(this.apiid==1){
 
 
   setInterval(()=>{
-   
-    if(this.index>0 && this.index<6){
+
+
+    if(this.indexwise_response?.fs_details[0]?._ranking_data.length>=5 ){
+      if(this.index>0 && this.index<6){
      
-      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.first_name
-      this.indexwise_ranking_team_name=this.indexwise.data?.fs_details[1]?._ranking_data[this.index]?.team_name
-      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.team_weightage
-      this.index_ranking_profile=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.profile_logo
-      this.index++;
+        this.indexwise_ranking_name=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.first_name
+        this.indexwise_ranking_team_name=this.indexwise.data?.fs_details[1]?._ranking_data[this.index]?.team_name
+        this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.team_weightage
+        this.index_ranking_profile=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.profile_logo
+        this.index++;
+       
      
-   
-    
+      
+      }
+      if(this.index==6){
+        this.index=0
+        this.indexwise_ranking_name=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.first_name
+        this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.team_name
+        this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.team_weightage
+        this.index_ranking_profile=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.profile_logo
+        this.index++;
+      }
     }
-    if(this.index==6){
-      this.index=0
-      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.first_name
-      this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.team_name
-      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.team_weightage
-      this.index_ranking_profile=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.profile_logo
-      this.index++;
+    else{
+      if(this.index>0 && this.index<4){
+     
+        this.indexwise_ranking_name=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.first_name
+        this.indexwise_ranking_team_name=this.indexwise.data?.fs_details[1]?._ranking_data[this.index]?.team_name
+        this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.team_weightage
+        this.index_ranking_profile=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.profile_logo
+        this.index++;
+       
+     
+      
+      }
+      if(this.index==4){
+        this.index=0
+        this.indexwise_ranking_name=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.first_name
+        this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.team_name
+        this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[1]?._ranking_data[0]?.team_weightage
+        this.index_ranking_profile=this.indexwise?.data?.fs_details[1]?._ranking_data[this.index]?.profile_logo
+        this.index++;
+      }
+
     }
   },1350) 
    this.loadIndexWiseForId2TL()
@@ -152,26 +208,50 @@ else if(this.apiid==2){
 
   setInterval(()=>{
    
-    if(this.index>0 && this.index<6){
+    if(this.indexwise_response?.fs_details[0]?._ranking_data.length>=5 ){
+      if(this.index>0 && this.index<6){
      
-      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.first_name
-      this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.team_name
-      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.team_weightage
-      this.index_ranking_profile=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.profile_logo
-      this.index++;
+        this.indexwise_ranking_name=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.first_name
+        this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.team_name
+        this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.team_weightage
+        this.index_ranking_profile=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.profile_logo
+        this.index++;
+       
      
-   
-    
+      
+      }
+      if(this.index==6){
+        this.index=0
+        this.indexwise_ranking_name=this.indexwise?.data.fs_details[2]?._ranking_data[0]?.first_name
+        this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[2]?._ranking_data[0]?.team_name
+        this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[2]?._ranking_data[0]?.team_weightage
+        this.index_ranking_profile=this.indexwise.data?.fs_details[2]?._ranking_data[this.index]?.profile_logo
+        this.index++;
+      }
+  
+    }else{
+      if(this.index>0 && this.index<4){
+     
+        this.indexwise_ranking_name=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.first_name
+        this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.team_name
+        this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.team_weightage
+        this.index_ranking_profile=this.indexwise?.data?.fs_details[2]?._ranking_data[this.index]?.profile_logo
+        this.index++;
+       
+     
+      
+      }
+      if(this.index==4){
+        this.index=0
+        this.indexwise_ranking_name=this.indexwise?.data.fs_details[2]?._ranking_data[0]?.first_name
+        this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[2]?._ranking_data[0]?.team_name
+        this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[2]?._ranking_data[0]?.team_weightage
+        this.index_ranking_profile=this.indexwise.data?.fs_details[2]?._ranking_data[this.index]?.profile_logo
+        this.index++;
+      }
+  
     }
-    if(this.index==6){
-      this.index=0
-      this.indexwise_ranking_name=this.indexwise?.data.fs_details[2]?._ranking_data[0]?.first_name
-      this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[2]?._ranking_data[0]?.team_name
-      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[2]?._ranking_data[0]?.team_weightage
-      this.index_ranking_profile=this.indexwise.data?.fs_details[2]?._ranking_data[this.index]?.profile_logo
-      this.index++;
-    }
-  },1350)
+    },1350)
 
   this.loadIndexWiseForId3TL()
   
@@ -192,25 +272,49 @@ else if(this.apiid==3){
 
   setInterval(()=>{
    
-    if(this.index>0 && this.index<6){
+    if(this.indexwise_response?.fs_details[0]?._ranking_data.length>=5 ){
+      if(this.index>0 && this.index<6){
      
-      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.first_name
-      this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.team_name
-      this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.team_weightage
-      this.index_ranking_profile=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.profile_logo
-      this.index++;
+        this.indexwise_ranking_name=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.first_name
+        this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.team_name
+        this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.team_weightage
+        this.index_ranking_profile=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.profile_logo
+        this.index++;
+       
      
-   
+      
+      }
+      if(this.index==6){
+        this.index=0
+        this.indexwise_ranking_name=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.first_name
+        this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.team_name
+        this.indexwise_ranking_weightage=this.indexwise?.data.fs_details[3]?._ranking_data[0]?.team_weightage
+        this.index_ranking_profile=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.profile_logo
+        this.index++;
+      }
+    }else{
+      if(this.index>0 && this.index<4){
+     
+        this.indexwise_ranking_name=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.first_name
+        this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.team_name
+        this.indexwise_ranking_weightage=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.team_weightage
+        this.index_ranking_profile=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.profile_logo
+        this.index++;
+       
+     
+      
+      }
+      if(this.index==4){
+        this.index=0
+        this.indexwise_ranking_name=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.first_name
+        this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.team_name
+        this.indexwise_ranking_weightage=this.indexwise?.data.fs_details[3]?._ranking_data[0]?.team_weightage
+        this.index_ranking_profile=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.profile_logo
+        this.index++;
+      }
+    }
     
-    }
-    if(this.index==6){
-      this.index=0
-      this.indexwise_ranking_name=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.first_name
-      this.indexwise_ranking_team_name=this.indexwise?.data?.fs_details[3]?._ranking_data[0]?.team_name
-      this.indexwise_ranking_weightage=this.indexwise?.data.fs_details[3]?._ranking_data[0]?.team_weightage
-      this.index_ranking_profile=this.indexwise?.data?.fs_details[3]?._ranking_data[this.index]?.profile_logo
-      this.index++;
-    }
+ 
   },1350)
   this.loadEmergingTL()
 }
@@ -247,8 +351,8 @@ loadIndexWiseForId3TL(){
 }
 loadEmergingTL(){
   setInterval(()=>{
-    this.location.replaceState("Emerging_TL_dashboard");
-    // `            this.location.replaceState("Overall_RM");
+    // this.location.replaceState("Emerging_");
+    this.location.replaceState("Overall_RM");
     location.reload()
    
    },6750)
